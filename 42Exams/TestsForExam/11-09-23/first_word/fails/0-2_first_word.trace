@@ -1,0 +1,7 @@
+----------------8<-------------[ START TEST 
+        💻 TEST
+./a.out "abc" 
+        🔎 YOUR OUTPUT:
+abc        🗝 EXPECTED OUTPUT:
+abc$
+----------------8<------------- END TEST ]

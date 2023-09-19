@@ -1,0 +1,25 @@
+----------------8<-------------[ START TEST 
+        💻 TEST
+./a.out "1024"         🔎 YOUR OUTPUT:
+../../rendu/is_power_of_2/is_power_of_2.c:18:10: error: subscripted value is not an array, pointer, or vector
+        while (n[i])
+               ~^~
+../../rendu/is_power_of_2/is_power_of_2.c:21:7: error: subscripted value is not an array, pointer, or vector
+        if (n[i] == 0 || n[i] == 2 || n[i] == 4 || n[i] == 6 || n[i] == 8)
+            ~^~
+../../rendu/is_power_of_2/is_power_of_2.c:21:20: error: subscripted value is not an array, pointer, or vector
+        if (n[i] == 0 || n[i] == 2 || n[i] == 4 || n[i] == 6 || n[i] == 8)
+                         ~^~
+../../rendu/is_power_of_2/is_power_of_2.c:21:33: error: subscripted value is not an array, pointer, or vector
+        if (n[i] == 0 || n[i] == 2 || n[i] == 4 || n[i] == 6 || n[i] == 8)
+                                      ~^~
+../../rendu/is_power_of_2/is_power_of_2.c:21:46: error: subscripted value is not an array, pointer, or vector
+        if (n[i] == 0 || n[i] == 2 || n[i] == 4 || n[i] == 6 || n[i] == 8)
+                                                   ~^~
+../../rendu/is_power_of_2/is_power_of_2.c:21:59: error: subscripted value is not an array, pointer, or vector
+        if (n[i] == 0 || n[i] == 2 || n[i] == 4 || n[i] == 6 || n[i] == 8)
+                                                                ~^~
+6 errors generated.
+
+        ❌ COMPILATION ERROR
+----------------8<------------- END TEST ]
