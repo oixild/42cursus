@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:06:19 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/20 13:44:30 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/09/20 13:45:06 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	ft_isnum(char *num)
 	return (1);
 }
 
-int	args_error_control(int argc, char **argv)
+void	args_error_control(int argc, char **argv)
 {
 	int		i;
 	long	tmp;
