@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dsabater <dsabater@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 15:06:16 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/19 09:45:29 by dsabater         ###   ########.fr       */
+/*   Created: 2023/05/23 14:54:45 by dsabater          #+#    #+#             */
+/*   Updated: 2023/06/06 10:40:24 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 static	void	ft_free(char **res)
 {

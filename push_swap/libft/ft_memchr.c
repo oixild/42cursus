@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_utils.c                                         :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dsabater <dsabater@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 15:06:08 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/20 13:41:37 by dsabater         ###   ########.fr       */
+/*   Created: 2023/05/13 15:16:43 by dsabater          #+#    #+#             */
+/*   Updated: 2023/05/13 15:48:51 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-char	*ft_free(char **str)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	free(*str);
-	*str = NULL;
-	return (NULL);
+	size_t			i;
+
+	i = 0;
+	if (n == 0)
+		return (NULL);
+	while (i < n)
+	{
+		if (((unsigned char *)s)[i] == (unsigned char)c)
+			return ((void *)&s[i]);
+		i++;
+	}
+	return (0);
 }

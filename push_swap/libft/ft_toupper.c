@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_utils.c                                         :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dsabater <dsabater@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 15:06:08 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/20 13:41:37 by dsabater         ###   ########.fr       */
+/*   Created: 2023/05/05 17:25:19 by dsabater          #+#    #+#             */
+/*   Updated: 2023/05/05 18:29:25 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-char	*ft_free(char **str)
+int	ft_toupper(int c)
 {
-	free(*str);
-	*str = NULL;
-	return (NULL);
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }

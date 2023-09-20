@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_utils.c                                         :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dsabater <dsabater@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 15:06:08 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/20 13:41:37 by dsabater         ###   ########.fr       */
+/*   Created: 2023/06/06 08:39:20 by dsabater          #+#    #+#             */
+/*   Updated: 2023/06/12 17:12:33 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-char	*ft_free(char **str)
+t_list	*ft_lstlast(t_list *lst)
 {
-	free(*str);
-	*str = NULL;
-	return (NULL);
+	while (lst)
+	{
+		if (!lst->next)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
 }

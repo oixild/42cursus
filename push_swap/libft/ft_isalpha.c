@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_utils.c                                         :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dsabater <dsabater@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 15:06:08 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/20 13:41:37 by dsabater         ###   ########.fr       */
+/*   Created: 2023/05/09 13:12:56 by dsabater          #+#    #+#             */
+/*   Updated: 2023/05/09 14:24:52 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-char	*ft_free(char **str)
+int	ft_isalpha(int c)
 {
-	free(*str);
-	*str = NULL;
-	return (NULL);
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }

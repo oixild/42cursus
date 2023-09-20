@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dsabater <dsabater@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/02 12:11:16 by dsabater          #+#    #+#             */
-/*   Updated: 2023/08/16 12:27:11 by dsabater         ###   ########.fr       */
+/*   Created: 2023/05/10 15:30:08 by dsabater          #+#    #+#             */
+/*   Updated: 2023/05/13 15:59:21 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(char *s)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int	i;
+	unsigned char	*s;
+	unsigned char	*t;
+	size_t			i;
 
+	s = dst;
+	t = (unsigned char *)src;
 	i = 0;
-	if (s)
+	if (src == 0 && dst == 0)
+		return (NULL);
+	while (i < n)
 	{
-		while (s[i])
-		{
-			if (write(1, &s[i], 1) < 0)
-				return (-1);
-			i++;
-		}
+		s[i] = t[i];
+		i++;
 	}
-	else
-		i = write(1, "(null)", 6);
-	return (i);
+	return (s);
 }

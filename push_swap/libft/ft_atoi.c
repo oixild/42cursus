@@ -1,45 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/02 12:10:38 by dsabater          #+#    #+#             */
-/*   Updated: 2023/08/16 12:25:39 by dsabater         ###   ########.fr       */
+/*   Created: 2023/05/16 13:51:58 by dsabater          #+#    #+#             */
+/*   Updated: 2023/09/06 14:40:37 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putnbr(unsigned long n)
+int	ft_atoi(const char *str)
 {
-	char	*str;
-	int		i;
+	int	num;
+	int	sign;
 
-	i = 0;
-	str = ft_itoa(n);
-	if (!str)
-		return (-1);
-	i = ft_putstr(str);
-	free(str);
-	if (i < 0)
-		return (-1);
-	return (i);
-}
-
-int	ft_putnbr_u(unsigned int n)
-{
-	char	*str;
-	int		i;
-
-	i = 0;
-	str = ft_utoa(n);
-	if (!str)
-		return (-1);
-	i = ft_putstr(str);
-	free(str);
-	if (i < 0)
-		return (-1);
-	return (i);
+	num = 0;
+	sign = 1;
+	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
+		str++;
+	if (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (*str != '\0' && ft_isdigit(*str))
+	{
+		num = num * 10 + (*str - '0');
+		str++;
+	}
+	return (num * sign);
 }
