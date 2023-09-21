@@ -16,9 +16,15 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include "libft.h"
+# include "libft/libft.h"
 
 // NODE STRUCTURE STACK
+typedef struct s_list
+{
+	int				value;
+	int				index;
+	struct s_list	*next;
+}				t_list;
 
 // PUSHSWAP
 int		ft_is_num(char c);
