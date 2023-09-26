@@ -1,20 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   index_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:06:05 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/19 09:51:14 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/09/26 10:57:31 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//reverse rotate b - desplaza hacia abajo todos los elementos del stack b una
-//posición, de forma que el último elemento se convierte en el primero.
+static t_list	*get_next_min(t_list **stack)
+{
+	t_list	*head;
+	t_list	*min;
+	int		has_min;
 
+	min = NULL;
+	has_min = 0;
+	head = *stack;
+	if (head)
+	{
+		while (head)
+		{
+			if ((head->index == -1) && (!has_min || head->value < min->value))
+			{
+				min = head;
+				has_min = 1;
+			}
+			head = head->next;
+		}
+	}
+	return (min);
+}
 
+void	index_stack(t_list **stack)
+{
+	t_list	*head;
+	int		index;
 
-
-//reverse rotate a y reverse rotate b - desplaza al mismo tiempo todos
-//los elementos del stack a y del stack b una posic
+	index = 0;
+	head = get_next_min(stack);
+	while (head)
+	{
+		head->index = index++;
+		head = get_next_min(stack);
+	}
+}

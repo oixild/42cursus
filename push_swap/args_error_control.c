@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:06:19 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/20 13:45:06 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/09/20 13:48:39 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_error(char *msg)
 	exit(0);
 }
 
-static int	ft_contains(int num, char **argv, int i)
+static int	find_duplicated_numbers(int num, char **argv, int i)
 {
 	i++;
 	while (argv[i])
@@ -65,7 +65,7 @@ void	args_error_control(int argc, char **argv)
 		tmp = ft_atoi(args[i]);
 		if (!ft_isnum(args[i]))
 			ft_error("Error");
-		if (ft_contains(tmp, args, i))
+		if (ft_find_duplicated_numbers(tmp, args, i))
 			ft_error("Error");
 		if (tmp < -2147483648 || tmp > 2147483647)
 			ft_error("Error");
@@ -73,5 +73,4 @@ void	args_error_control(int argc, char **argv)
 	}
 	if (argc == 2)
 		ft_free(args);
-	return 0;
 }

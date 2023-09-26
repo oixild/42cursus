@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:04:10 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/19 12:53:06 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/09/26 11:49:38 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,14 @@ static void	initStack(t_list **stack, int argc, char **argv)
 		ft_free(args);
 }
 
+static void	sort_stack(t_list **stack_a, t_list **stack_b)
+{
+	if (ft_lstsize(*stack_a) <= 5)
+		quickSortWrapper(stack_a, stack_b);
+	else
+		radix_sort(stack_a, stack_b);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	a;
@@ -48,4 +56,14 @@ int	main(int argc, char **argv)
 	*stack_a = NULL;
 	*stack_b = NULL;
 	initStack(stack_a, argc, argv);
+		if (is_sorted(stack_a))
+	{
+		free_stack(stack_a);
+		free_stack(stack_b);
+		return (0);
+	}
+	sort_stack(stack_a, stack_b);
+	free_stack(stack_a);
+	free_stack(stack_b);
+	return (0);
 }
