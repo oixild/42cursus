@@ -16,11 +16,12 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include "libft.h"
+# include "libft/libft.h"
 
 // NODE STRUCTURE STACK
 typedef struct s_list
 {
+<<<<<<< HEAD
 	int				content;
 	int				index;
 	struct s_list	*next;
@@ -32,6 +33,12 @@ typedef struct
 	t_list **stack_a;
 	t_list **stack_b;
 } t_stack;
+=======
+	int				value;
+	int				index;
+	struct s_list	*next;
+}				t_list;
+>>>>>>> f63e37c09e9ccded152b56655f543394f3adb1c4
 
 // PUSHSWAP
 void	args_error_control(int argc, char **argv);

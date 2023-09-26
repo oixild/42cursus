@@ -18,7 +18,11 @@ void	ft_error(char *msg)
 	exit(0);
 }
 
+<<<<<<< HEAD
 static int	find_duplicated_numbers(int num, char **argv, int i)
+=======
+static int	find_duplicated_number(int num, char **argv, int i)
+>>>>>>> f63e37c09e9ccded152b56655f543394f3adb1c4
 {
 	i++;
 	while (argv[i])

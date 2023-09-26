@@ -12,6 +12,14 @@
 
 #include "push_swap.h"
 
+static void	sort_stack(t_list **stack_a, t_list **stack_b)
+{
+	if (ft_lstsize(*stack_a) <= 5)
+		simple_sort(stack_a, stack_b);
+	else
+		radix_sort(stack_a, stack_b);
+}
+
 static void	initStack(t_list **stack, int argc, char **argv)
 {
 	t_list	*new;
@@ -56,7 +64,11 @@ int	main(int argc, char **argv)
 	*stack_a = NULL;
 	*stack_b = NULL;
 	initStack(stack_a, argc, argv);
+<<<<<<< HEAD
 		if (is_sorted(stack_a))
+=======
+	if (is_sorted(stack_a))
+>>>>>>> f63e37c09e9ccded152b56655f543394f3adb1c4
 	{
 		free_stack(stack_a);
 		free_stack(stack_b);
