@@ -6,14 +6,14 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:06:03 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/26 11:36:17 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/09/28 10:11:02 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // Función para intercambiar dos nodos en una lista enlazada
-void swapNodes(t_list *a, t_list *b)
+void swapNodes(t_stack_node *a, t_stack_node *b)
 {
 	int temp;
 
@@ -23,13 +23,13 @@ void swapNodes(t_list *a, t_list *b)
 }
 
 // Función para seleccionar el pivote y particionar la lista
-t_list *partition(t_list *low, t_list *high)
+t_stack_node *partition(t_stack_node *low, t_stack_node *high)
 {
 	int pivot;
 
 	pivot = high->content;
-	t_list *i = low->prev;
-	t_list *j = low;
+	t_stack_node *i = low;
+	t_stack_node *j = low;
 
 	while (j != high)
 	{
@@ -50,11 +50,11 @@ t_list *partition(t_list *low, t_list *high)
 }
 
 // Función principal de QuickSort para una lista enlazada
-void quickSortList(t_stack *stacks, t_list *low, t_list *high)
+void quickSortList(t_stack *stacks, t_stack_node *low, t_stack_node *high)
 {
-	t_list *pivot;
-	t_list *current
-	t_list *element_to_move
+	t_stack_node *pivot;
+	t_stack_node *current;
+	t_stack_node *element_to_move;
 
 	if (high != NULL && low != high && low != high->next)
 	{
@@ -65,33 +65,33 @@ void quickSortList(t_stack *stacks, t_list *low, t_list *high)
 			if (current->content > pivot->content)
 			{
 				// Mueve el elemento a stack_b
-				*element_to_move = current;
+				element_to_move = current;
 				current = current->next; // Avanza el puntero antes de mover el elemento
-				ft_lstadd_front(stacks->stack_b, element_to_move);
+				ft_stack_add_front(stacks->stack_b, element_to_move);
 			}
 			else current = current->next;
 		}
-		quickSortList(stacks, low, pivot->prev);
+		quickSortList(stacks, low, pivot);
 		quickSortList(stacks, pivot->next, high);
 		while (*stacks->stack_b)
 		{
-			t_list *element_to_move = *stacks->stack_b;
-			ft_lstadd_front(stacks->stack_a, element_to_move);
+			t_stack_node *element_to_move = *stacks->stack_b;
+			ft_stack_add_front(stacks->stack_a, element_to_move);
 			*stacks->stack_b = (*stacks->stack_b)->next;
 		}
 	}
 }
 
 // Función para iniciar QuickSort en la lista
-void quickSortWrapper(t_list **stack_a, t_list **stack_b)
+void quickSortWrapper(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	t_stack stacks;
-	t_list *tail
+	t_stack_node  *tail;
 
     stacks.stack_a = stack_a;
     stacks.stack_b = stack_b;
 	tail = *stack_a;
 	while (tail != NULL && tail->next != NULL)
 		tail = tail->next;
-	quickSortList(*stack_a, tail);
+	quickSortList(&stacks, *stack_a, tail);
 }

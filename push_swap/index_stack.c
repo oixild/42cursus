@@ -6,44 +6,46 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:06:05 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/26 10:57:31 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/09/26 12:41:05 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static t_list	*get_next_min(t_list **stack)
+#include "push_swap.h"
+
+static t_stack_node	*get_next_min(t_stack_node **stack)
 {
-	t_list	*head;
-	t_list	*min;
+	t_stack_node	*current;
+	t_stack_node	*min;
 	int		has_min;
 
 	min = NULL;
 	has_min = 0;
-	head = *stack;
-	if (head)
+	current = *stack;
+	if (current)
 	{
-		while (head)
+		while (current)
 		{
-			if ((head->index == -1) && (!has_min || head->value < min->value))
+			if ((current->index == -1) && (!has_min || current->content < min->content))
 			{
-				min = head;
+				min = current;
 				has_min = 1;
 			}
-			head = head->next;
+			current = current->next;
 		}
 	}
 	return (min);
 }
 
-void	index_stack(t_list **stack)
+void	index_stack(t_stack_node **stack)
 {
-	t_list	*head;
+	t_stack_node	*current;
 	int		index;
 
 	index = 0;
-	head = get_next_min(stack);
-	while (head)
+	current = get_next_min(stack);
+	while (current)
 	{
-		head->index = index++;
-		head = get_next_min(stack);
+		current->index = index++;
+		current = get_next_min(stack);
 	}
 }

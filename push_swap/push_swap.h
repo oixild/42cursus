@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:04:33 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/26 11:36:57 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/09/28 10:42:06 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,35 +19,55 @@
 # include "libft/libft.h"
 
 // NODE STRUCTURE STACK
-typedef struct s_list
+typedef struct s_stack_node
 {
-<<<<<<< HEAD
 	int				content;
 	int				index;
-	struct s_list	*next;
-}				t_list;
+	struct s_stack_node	*next;
+}				t_stack_node;
 
 // Structure containing stack_a and stack_b
 typedef struct
 {
-	t_list **stack_a;
-	t_list **stack_b;
+	t_stack_node **stack_a;
+	t_stack_node **stack_b;
 } t_stack;
-=======
-	int				value;
-	int				index;
-	struct s_list	*next;
-}				t_list;
->>>>>>> f63e37c09e9ccded152b56655f543394f3adb1c4
 
 // PUSHSWAP
-void	args_error_control(int argc, char **argv);
-int		ft_is_num(char c);
-char	*ft_free(char **str);
-void	index_stack(t_list **stack);
-int		is_sorted(t_list **stack);
-void	free_stack(t_list **stack);
-void	quickSortWrapper(t_list **stack_a, t_list **stack_b);
-void	radix_sort(t_list **stack_a, t_list **stack_b);
+void			args_error_control(int argc, char **argv);
+int				ft_is_num(char c);
+char			*ft_free(char **str);
+void			index_stack(t_stack_node **stack);
+int				is_sorted(t_stack_node **stack);
+void			free_stack(t_stack_node **stack);
+void			quickSortWrapper(t_stack_node **stack_a, t_stack_node **stack_b);
+void			radix_sort(t_stack_node **stack_a, t_stack_node **stack_b);
+void	ft_error(char *msg);
+
+// USE OF NODES
+int				ft_stack_size(t_stack_node *stack);
+void			ft_stack_add_back(t_stack_node **stack, t_stack_node *new);
+t_stack_node	*create_stack_node(int value);
+void			add_stack_node(t_stack_node **stack, t_stack_node *new_node);
+void			ft_stack_add_front(t_stack_node **stack, t_stack_node *new_node);
+t_stack_node *ft_stack_last(t_stack_node *stack);
+
+// MOVEMENTS
+
+int				sa(t_stack_node **stack_a);
+int				sb(t_stack_node **stack_b);
+int				ss(t_stack_node **stack_a, t_stack_node **stack_b);
+int				push(t_stack_node **stack_to, t_stack_node **stack_from);
+int				pa(t_stack_node **stack_a, t_stack_node **stack_b);
+int				pb(t_stack_node **stack_a, t_stack_node **stack_b);
+int				rotate(t_stack_node **stack);
+int				ra(t_stack_node **stack_a);
+int				rb(t_stack_node **stack_b);
+int				rr(t_stack_node **stack_a, t_stack_node **stack_b);
+int				reverseRotate(t_stack_node **stack);
+int				rra(t_stack_node **stack_a);
+int				rrb(t_stack_node **stack_b);
+int				rrr(t_stack_node **stack_a, t_stack_node **stack_b);
+
 
 #endif

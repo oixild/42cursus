@@ -6,20 +6,20 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:06:21 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/26 11:14:33 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/09/28 10:30:20 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	get_max_bits(t_list **stack)
+static int	get_max_bits(t_stack_node **stack)
 {
-	t_list	*current;
+	t_stack_node	*current;
 	int		max_index;
 	int		max_bits;
 
-	head = *stack;
-	max = current->index;
+	current = *stack;
+	max_index = current->index;
 	max_bits = 0;
 	while (current)
 	{
@@ -32,9 +32,9 @@ static int	get_max_bits(t_list **stack)
 	return (max_bits);
 }
 
-void	radix_sort(t_list **stack_a, t_list **stack_b)
+void	radix_sort(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	t_list	*current_a;
+	t_stack_node	*current_a;
 	int		i;
 	int		j;
 	int		size;
@@ -42,7 +42,7 @@ void	radix_sort(t_list **stack_a, t_list **stack_b)
 
 	i = 0;
 	current_a = *stack_a;
-	size = ft_lstsize(current_a);
+	size = ft_stack_size(current_a);
 	max_bits = get_max_bits(stack_a);
 	while (i < max_bits)
 	{
@@ -55,7 +55,7 @@ void	radix_sort(t_list **stack_a, t_list **stack_b)
 			else
 				pb(stack_a, stack_b);
 		}
-		while (ft_lstsize(*stack_b) != 0)
+		while (ft_stack_size(*stack_b) != 0)
 			pa(stack_a, stack_b);
 		i++;
 	}

@@ -6,7 +6,7 @@
 #    By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/04 16:15:04 by dsabater          #+#    #+#              #
-#    Updated: 2023/09/26 11:20:24 by dsabater         ###   ########.fr        #
+#    Updated: 2023/09/28 10:19:40 by dsabater         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ WHITE = \033[0;97m
 NAME = push_swap
 
 SRCS =	push_swap.c args_error_control.c ps_utils.c \
-		index_stack.c quick_sort.c radix_sort.c
+		index_stack.c quick_sort.c radix_sort.c \
+		ft_node_stack.c movement_operations.c \
 
 OBJS = $(SRCS:.c=.o)
 
