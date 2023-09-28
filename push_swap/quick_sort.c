@@ -6,92 +6,135 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:06:03 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/28 10:11:02 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/09/28 11:53:27 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Función para intercambiar dos nodos en una lista enlazada
-void swapNodes(t_stack_node *a, t_stack_node *b)
+static int get_min(t_stack_node **stack, int excluded_index)
 {
-	int temp;
+    t_stack_node *current = *stack;
+    int min = current->index;
 
-	temp = a->content;
-	a->content = b->content;
-	b->content = temp;
+    while (current->next)
+    {
+        current = current->next;
+        if ((current->index < min) && current->index != excluded_index)
+            min = current->index;
+    }
+
+    return min;
 }
 
-// Función para seleccionar el pivote y particionar la lista
-t_stack_node *partition(t_stack_node *low, t_stack_node *high)
+static void sort_3(t_stack_node **stack_a)
 {
-	int pivot;
+    t_stack_node *current = *stack_a;
+    int min;
+    int next_min;
 
-	pivot = high->content;
-	t_stack_node *i = low;
-	t_stack_node *j = low;
+    min = get_min(stack_a, -1);
+    next_min = get_min(stack_a, min);
 
-	while (j != high)
-	{
-		if (j->content <= pivot)
-		{
-			if (i == NULL)
-				i = low;
-			else i = i->next;
-			swapNodes(i, j);
-		}
-		j = j->next;
-	}
-	if (i == NULL)
-		i = low;
-	else i = i->next;
-	swapNodes(i, high);
-	return (i);
+    if (is_sorted(stack_a))
+        return;
+
+    if (current->index == min && current->next->index != next_min)
+    {
+        ra(stack_a);
+        sa(stack_a);
+        rra(stack_a);
+    }
+    else if (current->index == next_min)
+    {
+        if (current->next->index == min)
+            sa(stack_a);
+        else
+            rra(stack_a);
+    }
+    else
+    {
+        if (current->next->index == min)
+            ra(stack_a);
+        else
+        {
+            sa(stack_a);
+            rra(stack_a);
+        }
+    }
 }
 
-// Función principal de QuickSort para una lista enlazada
-void quickSortList(t_stack *stacks, t_stack_node *low, t_stack_node *high)
+static void sort_4(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	t_stack_node *pivot;
-	t_stack_node *current;
-	t_stack_node *element_to_move;
+    int distance;
 
-	if (high != NULL && low != high && low != high->next)
-	{
-		pivot = partition(low, high);
-		current = low;
-		while (current != pivot)
-		{
-			if (current->content > pivot->content)
-			{
-				// Mueve el elemento a stack_b
-				element_to_move = current;
-				current = current->next; // Avanza el puntero antes de mover el elemento
-				ft_stack_add_front(stacks->stack_b, element_to_move);
-			}
-			else current = current->next;
-		}
-		quickSortList(stacks, low, pivot);
-		quickSortList(stacks, pivot->next, high);
-		while (*stacks->stack_b)
-		{
-			t_stack_node *element_to_move = *stacks->stack_b;
-			ft_stack_add_front(stacks->stack_a, element_to_move);
-			*stacks->stack_b = (*stacks->stack_b)->next;
-		}
-	}
+    if (is_sorted(stack_a))
+        return;
+
+    distance = get_distance(stack_a, get_min(stack_a, -1));
+
+    if (distance == 1)
+        ra(stack_a);
+    else if (distance == 2)
+    {
+        ra(stack_a);
+        ra(stack_a);
+    }
+    else if (distance == 3)
+        rra(stack_a);
+
+    if (is_sorted(stack_a))
+        return;
+
+    pb(stack_a, stack_b);
+    sort_3(stack_a);
+    pa(stack_a, stack_b);
 }
 
-// Función para iniciar QuickSort en la lista
-void quickSortWrapper(t_stack_node **stack_a, t_stack_node **stack_b)
+void sort_5(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	t_stack stacks;
-	t_stack_node  *tail;
+    int distance;
 
-    stacks.stack_a = stack_a;
-    stacks.stack_b = stack_b;
-	tail = *stack_a;
-	while (tail != NULL && tail->next != NULL)
-		tail = tail->next;
-	quickSortList(&stacks, *stack_a, tail);
+    distance = get_distance(stack_a, get_min(stack_a, -1));
+
+    if (distance == 1)
+        ra(stack_a);
+    else if (distance == 2)
+    {
+        ra(stack_a);
+        ra(stack_a);
+    }
+    else if (distance == 3)
+    {
+        rra(stack_a);
+        rra(stack_a);
+    }
+    else if (distance == 4)
+        rra(stack_a);
+
+    if (is_sorted(stack_a))
+        return;
+
+    pb(stack_a, stack_b);
+    sort_4(stack_a, stack_b);
+    pa(stack_a, stack_b);
+}
+
+void simple_sort(t_stack_node **stack_a, t_stack_node **stack_b)
+{
+    int size;
+
+    if (is_sorted(stack_a) || ft_stack_size(*stack_a) == 0 || ft_stack_size(*stack_a) == 1)
+        return;
+
+    size = ft_stack_size(*stack_a);
+
+    if (size == 2)
+        sa(stack_a);
+    else if (size == 3)
+        sort_3(stack_a);
+    else if (size == 4)
+        sort_4(stack_a, stack_b);
+    else if (size == 5)
+        sort_5(stack_a, stack_b);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dsabater <dsabater@student.42barcelona.    +#+  +:+       +#+         #
+#    By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/05 16:08:52 by dsabater          #+#    #+#              #
-#    Updated: 2023/06/12 17:18:01 by dsabater         ###   ########.fr        #
+#    Updated: 2023/09/28 11:22:59 by dsabater         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ OBJBONUS = $(BSRC:.c=.o)
 all: $(NAME)
 
 %.o: %.c $(HEADER)
-	cc $(FLAGS) -c $< -o $@
+	cc -g $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)

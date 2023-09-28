@@ -6,7 +6,7 @@
 #    By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/04 16:15:04 by dsabater          #+#    #+#              #
-#    Updated: 2023/09/28 10:19:40 by dsabater         ###   ########.fr        #
+#    Updated: 2023/09/28 11:22:35 by dsabater         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS) Makefile
 	make -C libft
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) libft/libft.a
+	$(CC) $(CFLAGS) -g -o $(NAME) $(OBJS) libft/libft.a
 	@echo "$(GREEN)$(NAME) compiled$(DEFAULT)"
 
 %.o: %.c

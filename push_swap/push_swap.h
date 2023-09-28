@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:04:33 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/28 10:42:06 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/09/28 12:09:57 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,11 @@ char			*ft_free(char **str);
 void			index_stack(t_stack_node **stack);
 int				is_sorted(t_stack_node **stack);
 void			free_stack(t_stack_node **stack);
-void			quickSortWrapper(t_stack_node **stack_a, t_stack_node **stack_b);
+void			simple_sort(t_stack_node **stack_a, t_stack_node **stack_b);
 void			radix_sort(t_stack_node **stack_a, t_stack_node **stack_b);
-void	ft_error(char *msg);
+void			ft_error(char *msg);
+int				get_distance(t_stack_node **stack, int index);
+void			make_top(t_stack_node **stack, int distance);
 
 // USE OF NODES
 int				ft_stack_size(t_stack_node *stack);

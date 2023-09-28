@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:04:10 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/26 12:35:29 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/09/28 12:08:45 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	initStack(t_stack_node **stack, int argc, char **argv)
 static void	sort_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	if (ft_stack_size(*stack_a) <= 5)
-		quickSortWrapper(stack_a, stack_b);
+		simple_sort(stack_a, stack_b);
 	else radix_sort(stack_a, stack_b);
 }
 
