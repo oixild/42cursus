@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:06:08 by dsabater          #+#    #+#             */
-/*   Updated: 2023/10/02 15:31:04 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/10/02 16:26:43 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,6 @@ void	free_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 		current = next;
 	}
 	*stack_b = NULL;
+	free(stack_a);
+	free(stack_b);
 }
