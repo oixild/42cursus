@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:04:10 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/28 12:08:45 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/10/02 11:53:52 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,10 @@ int	main(int argc, char **argv)
 	initStack(stacks.stack_a, argc, argv);
 		if (is_sorted(stacks.stack_a))
 	{
-		free_stack(stacks.stack_a);
-		free_stack(stacks.stack_b);
+		free_stack(stacks.stack_a, stacks.stack_b);
 		return (0);
 	}
 	sort_stack(stacks.stack_a, stacks.stack_b);
-	free_stack(stacks.stack_a);
-	free_stack(stacks.stack_b);
+	free_stack(stacks.stack_a, stacks.stack_b);
 	return (0);
 }

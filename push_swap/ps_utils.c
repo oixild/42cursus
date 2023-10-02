@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:06:08 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/28 12:06:51 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/10/02 15:31:04 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,17 +70,25 @@ void make_top(t_stack_node **stack, int distance)
 			rra(stack);
 	}
 }
-void	free_stack(t_stack_node **stack)
+void	free_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	t_stack_node	*current;
-	t_stack_node	*tmp;
+	t_stack_node	*next;
 
-	current = *stack;
+	current = *stack_a;
 	while (current)
 	{
-		tmp = current;
-		current = current->next;
-		free(tmp);
+		next = current->next;
+		free(current);
+		current = next;
 	}
-	free(stack);
+	*stack_a = NULL;
+	current = *stack_b;
+	while (current)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	*stack_b = NULL;
 }

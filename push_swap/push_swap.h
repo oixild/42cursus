@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:04:33 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/28 12:09:57 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/10/02 11:51:29 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int				ft_is_num(char c);
 char			*ft_free(char **str);
 void			index_stack(t_stack_node **stack);
 int				is_sorted(t_stack_node **stack);
-void			free_stack(t_stack_node **stack);
+void			free_stack(t_stack_node **stack_a, t_stack_node **stack_b);
 void			simple_sort(t_stack_node **stack_a, t_stack_node **stack_b);
 void			radix_sort(t_stack_node **stack_a, t_stack_node **stack_b);
 void			ft_error(char *msg);
@@ -51,8 +51,8 @@ int				ft_stack_size(t_stack_node *stack);
 void			ft_stack_add_back(t_stack_node **stack, t_stack_node *new);
 t_stack_node	*create_stack_node(int value);
 void			add_stack_node(t_stack_node **stack, t_stack_node *new_node);
-void			ft_stack_add_front(t_stack_node **stack, t_stack_node *new_node);
-t_stack_node *ft_stack_last(t_stack_node *stack);
+// void			ft_stack_add_front(t_stack_node ***stack, t_stack_node *new_node);
+t_stack_node	*ft_stack_last(t_stack_node *stack);
 
 // MOVEMENTS
 

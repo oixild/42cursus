@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:06:11 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/28 10:41:52 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/10/02 11:39:18 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ t_stack_node	*create_stack_node(int value)
 	if (!new_node)
 		return (NULL);
 	new_node->content = value;
+	new_node->index = -1;
 	new_node->next = NULL;
 	return (new_node);
 }
@@ -61,13 +62,13 @@ void	add_stack_node(t_stack_node **stack, t_stack_node *new_node)
 		*stack = new_node;
 	}
 }
-void ft_stack_add_front(t_stack_node **stack, t_stack_node *new_node)
+/* void ft_stack_add_front(t_stack_node ***stack, t_stack_node *new_node)
 {
 	if (!new_node)
 		return;
-	new_node->next = *stack;
-	*stack = new_node;
-}
+	new_node->next = **stack;
+	**stack = new_node;
+} */
 t_stack_node *ft_stack_last(t_stack_node *stack)
 {
 	if (!stack)
