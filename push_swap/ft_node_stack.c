@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:06:11 by dsabater          #+#    #+#             */
-/*   Updated: 2023/10/02 11:39:18 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/10/11 12:38:42 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_stack_size(t_stack_node *stack)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	while (stack)
@@ -24,9 +24,10 @@ int	ft_stack_size(t_stack_node *stack)
 	}
 	return (size);
 }
+
 void	ft_stack_add_back(t_stack_node **stack, t_stack_node *new)
 {
-	t_stack_node *current;
+	t_stack_node	*current;
 
 	current = *stack;
 	if (!current)
@@ -38,6 +39,7 @@ void	ft_stack_add_back(t_stack_node **stack, t_stack_node *new)
 		current = current->next;
 	current->next = new;
 }
+
 t_stack_node	*create_stack_node(int value)
 {
 	t_stack_node	*new_node;
@@ -50,10 +52,11 @@ t_stack_node	*create_stack_node(int value)
 	new_node->next = NULL;
 	return (new_node);
 }
+
 void	add_stack_node(t_stack_node **stack, t_stack_node *new_node)
 {
 	if (!stack || !new_node)
-		return;
+		return ;
 	if (!*stack)
 		*stack = new_node;
 	else
@@ -69,7 +72,8 @@ void	add_stack_node(t_stack_node **stack, t_stack_node *new_node)
 	new_node->next = **stack;
 	**stack = new_node;
 } */
-t_stack_node *ft_stack_last(t_stack_node *stack)
+
+t_stack_node	*ft_stack_last(t_stack_node *stack)
 {
 	if (!stack)
 		return (NULL);

@@ -6,18 +6,18 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:06:13 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/28 10:40:54 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/10/11 12:46:44 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int swap(t_stack_node **stack)
+int	swap(t_stack_node **stack)
 {
-	t_stack_node *current;
-	t_stack_node *next;
-	int tmp_content;
-	int tmp_index;
+	t_stack_node	*current;
+	t_stack_node	*next;
+	int				tmp_content;
+	int				tmp_index;
 
 	if (ft_stack_size(*stack) < 2)
 		return (-1);
@@ -34,7 +34,7 @@ int swap(t_stack_node **stack)
 	return (0);
 }
 
-int sa(t_stack_node **stack_a)
+int	sa(t_stack_node **stack_a)
 {
 	if (swap(stack_a) == -1)
 		return (-1);
@@ -42,7 +42,7 @@ int sa(t_stack_node **stack_a)
 	return (0);
 }
 
-int sb(t_stack_node **stack_b)
+int	sb(t_stack_node **stack_b)
 {
 	if (swap(stack_b) == -1)
 		return (-1);
@@ -50,7 +50,7 @@ int sb(t_stack_node **stack_b)
 	return (0);
 }
 
-int ss(t_stack_node **stack_a, t_stack_node **stack_b)
+int	ss(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	if ((ft_stack_size(*stack_a) < 2) || (ft_stack_size(*stack_b) < 2))
 		return (-1);
@@ -60,11 +60,11 @@ int ss(t_stack_node **stack_a, t_stack_node **stack_b)
 	return (0);
 }
 
-int push(t_stack_node **stack_to, t_stack_node **stack_from)
+int	push(t_stack_node **stack_to, t_stack_node **stack_from)
 {
-	t_stack_node *tmp;
-	t_stack_node *top_to;
-	t_stack_node *top_from;
+	t_stack_node	*tmp;
+	t_stack_node	*top_to;
+	t_stack_node	*top_from;
 
 	if (ft_stack_size(*stack_from) == 0)
 		return (-1);
@@ -87,7 +87,7 @@ int push(t_stack_node **stack_to, t_stack_node **stack_from)
 	return (0);
 }
 
-int pa(t_stack_node **stack_a, t_stack_node **stack_b)
+int	pa(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	if (push(stack_a, stack_b) == -1)
 		return (-1);
@@ -95,7 +95,7 @@ int pa(t_stack_node **stack_a, t_stack_node **stack_b)
 	return (0);
 }
 
-int pb(t_stack_node **stack_a, t_stack_node **stack_b)
+int	pb(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	if (push(stack_b, stack_a) == -1)
 		return (-1);
@@ -103,10 +103,10 @@ int pb(t_stack_node **stack_a, t_stack_node **stack_b)
 	return (0);
 }
 
-int rotate(t_stack_node **stack)
+int	rotate(t_stack_node **stack)
 {
-	t_stack_node *current;
-	t_stack_node *tail;
+	t_stack_node	*current;
+	t_stack_node	*tail;
 
 	if (ft_stack_size(*stack) < 2)
 		return (-1);
@@ -118,7 +118,7 @@ int rotate(t_stack_node **stack)
 	return (0);
 }
 
-int ra(t_stack_node **stack_a)
+int	ra(t_stack_node **stack_a)
 {
 	if (rotate(stack_a) == -1)
 		return (-1);
@@ -126,7 +126,7 @@ int ra(t_stack_node **stack_a)
 	return (0);
 }
 
-int rb(t_stack_node **stack_b)
+int	rb(t_stack_node **stack_b)
 {
 	if (rotate(stack_b) == -1)
 		return (-1);
@@ -134,7 +134,7 @@ int rb(t_stack_node **stack_b)
 	return (0);
 }
 
-int rr(t_stack_node **stack_a, t_stack_node **stack_b)
+int	rr(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	if ((ft_stack_size(*stack_a) < 2) || (ft_stack_size(*stack_b) < 2))
 		return (-1);
@@ -144,7 +144,7 @@ int rr(t_stack_node **stack_a, t_stack_node **stack_b)
 	return (0);
 }
 
-int reverseRotate(t_stack_node **stack)
+int	reverseRotate(t_stack_node **stack)
 {
 	t_stack_node *current;
 	t_stack_node *tail;
@@ -167,7 +167,7 @@ int reverseRotate(t_stack_node **stack)
 	return (0);
 }
 
-int rra(t_stack_node **stack_a)
+int	rra(t_stack_node **stack_a)
 {
 	if (reverseRotate(stack_a) == -1)
 		return (-1);
@@ -175,7 +175,7 @@ int rra(t_stack_node **stack_a)
 	return (0);
 }
 
-int rrb(t_stack_node **stack_b)
+int	rrb(t_stack_node **stack_b)
 {
 	if (reverseRotate(stack_b) == -1)
 		return (-1);
@@ -183,7 +183,7 @@ int rrb(t_stack_node **stack_b)
 	return (0);
 }
 
-int rrr(t_stack_node **stack_a, t_stack_node **stack_b)
+int	rrr(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	if ((ft_stack_size(*stack_a) < 2) || (ft_stack_size(*stack_b) < 2))
 		return (-1);
