@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:06:21 by dsabater          #+#    #+#             */
-/*   Updated: 2023/09/28 10:30:20 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/10/18 13:46:20 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 static int	get_max_bits(t_stack_node **stack)
 {
 	t_stack_node	*current;
-	int		max_index;
-	int		max_bits;
+	int				max_index;
+	int				max_bits;
 
 	current = *stack;
 	max_index = current->index;
@@ -35,10 +35,10 @@ static int	get_max_bits(t_stack_node **stack)
 void	radix_sort(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	t_stack_node	*current_a;
-	int		i;
-	int		j;
-	int		size;
-	int		max_bits;
+	int				i;
+	int				j;
+	int				size;
+	int				max_bits;
 
 	i = 0;
 	current_a = *stack_a;

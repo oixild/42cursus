@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:04:33 by dsabater          #+#    #+#             */
-/*   Updated: 2023/10/02 11:51:29 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/10/18 13:18:32 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,17 @@
 // NODE STRUCTURE STACK
 typedef struct s_stack_node
 {
-	int				content;
-	int				index;
+	int					content;
+	int					index;
 	struct s_stack_node	*next;
 }				t_stack_node;
 
 // Structure containing stack_a and stack_b
-typedef struct
+typedef struct s_stack
 {
-	t_stack_node **stack_a;
-	t_stack_node **stack_b;
-} t_stack;
+	t_stack_node	**stack_a;
+	t_stack_node	**stack_b;
+}				t_stack;
 
 // PUSHSWAP
 void			args_error_control(int argc, char **argv);
@@ -45,13 +45,15 @@ void			radix_sort(t_stack_node **stack_a, t_stack_node **stack_b);
 void			ft_error(char *msg);
 int				get_distance(t_stack_node **stack, int index);
 void			make_top(t_stack_node **stack, int distance);
+void			shortelselines(t_stack_node current, int min, \
+				t_stack_node **stack_a);
 
 // USE OF NODES
 int				ft_stack_size(t_stack_node *stack);
 void			ft_stack_add_back(t_stack_node **stack, t_stack_node *new);
 t_stack_node	*create_stack_node(int value);
 void			add_stack_node(t_stack_node **stack, t_stack_node *new_node);
-// void			ft_stack_add_front(t_stack_node ***stack, t_stack_node *new_node);
+/*void	ft_stack_add_front(t_stack_node ***stack, t_stack_node *new_node);*/
 t_stack_node	*ft_stack_last(t_stack_node *stack);
 
 // MOVEMENTS
@@ -66,10 +68,9 @@ int				rotate(t_stack_node **stack);
 int				ra(t_stack_node **stack_a);
 int				rb(t_stack_node **stack_b);
 int				rr(t_stack_node **stack_a, t_stack_node **stack_b);
-int				reverseRotate(t_stack_node **stack);
+int				reverserotate(t_stack_node **stack);
 int				rra(t_stack_node **stack_a);
 int				rrb(t_stack_node **stack_b);
 int				rrr(t_stack_node **stack_a, t_stack_node **stack_b);
-
 
 #endif

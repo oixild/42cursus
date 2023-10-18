@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:06:08 by dsabater          #+#    #+#             */
-/*   Updated: 2023/10/02 16:26:43 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/10/18 12:43:16 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ char	*ft_free(char **str)
 	*str = NULL;
 	return (NULL);
 }
+
 int	is_sorted(t_stack_node **stack)
 {
 	t_stack_node	*lst;
@@ -32,7 +33,7 @@ int	is_sorted(t_stack_node **stack)
 	return (1);
 }
 
-int get_distance(t_stack_node **stack, int index)
+int	get_distance(t_stack_node **stack, int index)
 {
 	t_stack_node	*current;
 	int				distance;
@@ -41,22 +42,22 @@ int get_distance(t_stack_node **stack, int index)
 	distance = 0;
 	while (current)
 	{
-		if (current->index == index)
-			break;
+		if (current-> index == index)
+			break ;
 		distance++;
 		current = current->next;
 	}
-
-	return distance;
+	return (distance);
 }
 
-void make_top(t_stack_node **stack, int distance)
+// EL EXIT(0) ANTES ERA RETURN ;
+void	make_top(t_stack_node **stack, int distance)
 {
 	int				tmp;
 	t_stack_node	*current;
 
 	if (distance == 0)
-		return;
+		exit(0);
 	current = *stack;
 	tmp = ft_stack_size(*stack) - distance;
 	if (distance <= (ft_stack_size(*stack) / 2))
@@ -70,6 +71,7 @@ void make_top(t_stack_node **stack, int distance)
 			rra(stack);
 	}
 }
+
 void	free_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	t_stack_node	*current;

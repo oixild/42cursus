@@ -6,17 +6,17 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:04:10 by dsabater          #+#    #+#             */
-/*   Updated: 2023/10/02 11:53:52 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/10/18 13:21:01 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	initStack(t_stack_node **stack, int argc, char **argv)
+static void	initstack(t_stack_node **stack, int argc, char **argv)
 {
 	t_stack_node	*new;
-	char	**args;
-	int		i;
+	char			**args;
+	int				i;
 
 	i = 0;
 	if (argc == 2)
@@ -41,7 +41,8 @@ static void	sort_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	if (ft_stack_size(*stack_a) <= 5)
 		simple_sort(stack_a, stack_b);
-	else radix_sort(stack_a, stack_b);
+	else
+		radix_sort(stack_a, stack_b);
 }
 
 int	main(int argc, char **argv)
@@ -53,8 +54,8 @@ int	main(int argc, char **argv)
 	stacks.stack_b = (t_stack_node **)malloc(sizeof(t_stack_node *));
 	*stacks.stack_a = NULL;
 	*stacks.stack_b = NULL;
-	initStack(stacks.stack_a, argc, argv);
-		if (is_sorted(stacks.stack_a))
+	initstack(stacks.stack_a, argc, argv);
+	if (is_sorted(stacks.stack_a))
 	{
 		free_stack(stacks.stack_a, stacks.stack_b);
 		return (0);
