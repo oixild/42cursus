@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:06:13 by dsabater          #+#    #+#             */
-/*   Updated: 2023/10/18 12:25:58 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/10/20 13:23:11 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	swap(t_stack_node **stack)
 	current = *stack;
 	next = current->next;
 	if (!current && !next)
-		ft_error("Error occurred while swapping!");
+		ft_error("Error");
 	tmp_content = current->content;
 	tmp_index = current->index;
 	current->content = next->content;

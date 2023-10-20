@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:06:19 by dsabater          #+#    #+#             */
-/*   Updated: 2023/10/20 13:18:31 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/10/20 13:21:20 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ void	args_error_control(int argc, char **argv)
 	{
 		tmp = ft_atoi(args[i]);
 		if (!ft_isnum(args[i]))
-			ft_error("Error nonum");
+			ft_error("Error");
 		if (find_duplicated_numbers(tmp, args, i))
-			ft_error("Error duplicated");
+			ft_error("Error");
 		if (tmp < -2147483648 || tmp > 2147483647)
-			ft_error("Error mayoromenorint");
+			ft_error("Error");
 		i++;
 	}
 	if (argc == 2)

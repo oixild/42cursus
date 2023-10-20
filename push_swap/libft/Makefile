@@ -6,9 +6,20 @@
 #    By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/05 16:08:52 by dsabater          #+#    #+#              #
-#    Updated: 2023/09/28 11:22:59 by dsabater         ###   ########.fr        #
+#    Updated: 2023/10/20 13:33:35 by dsabater         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+# Color Aliases
+DEFAULT = \033[0;39m
+GRAY = \033[0;90m
+RED = \033[0;91m
+GREEN = \033[0;92m
+YELLOW = \033[0;93m
+BLUE = \033[0;94m
+MAGENTA = \033[0;95m
+CYAN = \033[0;96m
+WHITE = \033[0;97m
 
 NAME = libft.a
 
@@ -37,6 +48,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
+	@echo "$(GREEN)$(NAME) compiled$(DEFAULT)"
 
 bonus: .bonus
 
@@ -46,9 +58,11 @@ bonus: .bonus
 
 clean:
 	rm -f $(OBJ) $(OBJBONUS) .bonus
+	@echo "$(YELLOW)Cleaned up .o files from libft$(DEFAULT)"
 
 fclean: clean
 	rm -f $(NAME)
+		@echo "$(RED)Removed executable: $(NAME)$(DEFAULT)"
 
 re: fclean all
 
