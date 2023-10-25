@@ -6,11 +6,13 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:07:55 by dsabater          #+#    #+#             */
-/*   Updated: 2023/10/25 16:15:21 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:56:01 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minitalk.h"
+
+
 
 int	main(int argc, char **argv)
 {
@@ -19,6 +21,11 @@ int	main(int argc, char **argv)
 	if (argc == 3)
 	{
 
+		pid = ft_atoi(argv[1]);
+		if (ft_strncmp(argv[2], "si", 2) == 0)
+		{
+			kill(pid, SIGUSR1);
+		}
 	}
 	else
 	{

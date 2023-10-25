@@ -1,3 +1,26 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/10/25 16:57:26 by dsabater          #+#    #+#              #
+#    Updated: 2023/10/25 16:58:39 by dsabater         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# Color Aliases
+DEFAULT = \033[0;39m
+GRAY = \033[0;90m
+RED = \033[0;91m
+GREEN = \033[0;92m
+YELLOW = \033[0;93m
+BLUE = \033[0;94m
+MAGENTA = \033[0;95m
+CYAN = \033[0;96m
+WHITE = \033[0;97m
+
 NAME_SERVER = server
 NAME_CLIENT = client
 
@@ -29,12 +52,12 @@ $(NAME_CLIENT): $(OBJS_CLIENT) Makefile
 clean:
 	make -C libft clean
 	$(RM) $(OBJS_SERVER) $(OBJS_CLIENT)
-	@echo "$(YELLOW)Cleaned up .o files$(DEFAULT)"
+	@echo "$(YELLOW)Cleaned up .o files from $(NAME_SERVER) and $(NAME_CLIENT) $(DEFAULT)"
 
 fclean: clean
 	make -C libft fclean
 	$(RM) $(NAME_SERVER) $(NAME_CLIENT)
-	@echo "$(RED)Removed executables: $(NAME_SERVER) $(NAME_CLIENT)$(DEFAULT)"
+	@echo "$(RED)Removed executables: $(NAME_SERVER) and $(NAME_CLIENT)$(DEFAULT)"
 
 re: fclean all
 
