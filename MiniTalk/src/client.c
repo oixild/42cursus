@@ -12,7 +12,21 @@
 
 #include "../inc/minitalk.h"
 
+void	send_str_to_bit(int pid, char c)
+{
+	int	bit;
 
+	bit = 0;
+	while (bit < 8)
+	{
+		if ((c & (0x01 << bit)))
+			kill(pid, SIGUSR1);
+		else
+			kill(pid, SIGUSR2);
+		usleep(50);
+		bit++;
+	}
+}
 
 int	main(int argc, char **argv)
 {
@@ -20,24 +34,25 @@ int	main(int argc, char **argv)
 
 	if (argc == 3)
 	{
-
 		pid = ft_atoi(argv[1]);
-		if (ft_strncmp(argv[2], "si", 2) == 0)
+		while (argv[2][i] != '\0')
 		{
-			kill(pid, SIGUSR1);
+			send_str_to_bit(pid, argv[2][i]);
+			i++;
 		}
 	}
 	else
 	{
-		if (argc <= 3)
+		if (argc < 3)
 		{
-			write(1, "Error: Arguments missing", 25);
+			ft_printf("Error: Arguments missing\n");
 			return (1);
 		}
-		if (argc >= 4)
+		if (argc > 3)
 		{
-			write(1, "Error: Too many Arguments", 25);
+			ft_printf("Error: Too many Arguments\n");
 			return (1);
 		}
 	}
+	return (0);
 }

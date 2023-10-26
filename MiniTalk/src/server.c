@@ -14,8 +14,18 @@
 
 void	handler(int sig)
 {
+	static int	bit;
+	static int	i;
+
 	if (sig == SIGUSR1)
-		ft_printf("He recibido SIGUSR1\n");
+		i |= (0x01 << bit);
+	bit++;
+	if (bit == 8)
+	{
+		ft_printf("%c", i);
+		bit = 0;
+		i = 0;
+	}
 }
 
 int	main(int argc, char **argv)
@@ -30,7 +40,11 @@ int	main(int argc, char **argv)
 	}
 	pid = getpid();
 	ft_printf("Pid: %i\n", pid);
-	signal(SIGUSR1, handler);
-	while(1)
-		;
+	while (argc == 1)
+	{
+		signal(SIGUSR1, ft_handler);
+		signal(SIGUSR2, ft_handler);
+		pause ();
+	}
+	return (0);
 }
