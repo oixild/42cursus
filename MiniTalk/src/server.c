@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:07:53 by dsabater          #+#    #+#             */
-/*   Updated: 2023/10/25 16:35:11 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/10/29 09:13:49 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int	main(int argc, char **argv)
 	ft_printf("Pid: %i\n", pid);
 	while (argc == 1)
 	{
-		signal(SIGUSR1, ft_handler);
-		signal(SIGUSR2, ft_handler);
+		signal(SIGUSR1, handler);
+		signal(SIGUSR2, handler);
 		pause ();
 	}
 	return (0);
