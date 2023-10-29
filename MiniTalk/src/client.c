@@ -6,11 +6,26 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:07:55 by dsabater          #+#    #+#             */
-/*   Updated: 2023/10/25 16:56:01 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/10/29 09:36:56 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minitalk.h"
+
+int	argumen_error(int argc)
+{
+	if (argc < 3)
+	{
+		ft_printf("Error: Arguments missing\n");
+		return (1);
+	}
+	if (argc > 3)
+	{
+		ft_printf("Error: Too many Arguments\n");
+		return (1);
+	}
+	return (1);
+}
 
 void	send_str_to_bit(int pid, char c)
 {
@@ -31,7 +46,9 @@ void	send_str_to_bit(int pid, char c)
 int	main(int argc, char **argv)
 {
 	int	pid;
+	int	i;
 
+	i = 0;
 	if (argc == 3)
 	{
 		pid = ft_atoi(argv[1]);
@@ -40,19 +57,11 @@ int	main(int argc, char **argv)
 			send_str_to_bit(pid, argv[2][i]);
 			i++;
 		}
+		send_str_to_bit(pid, '\n');
 	}
 	else
 	{
-		if (argc < 3)
-		{
-			ft_printf("Error: Arguments missing\n");
-			return (1);
-		}
-		if (argc > 3)
-		{
-			ft_printf("Error: Too many Arguments\n");
-			return (1);
-		}
+		argumen_error(argc);
 	}
 	return (0);
 }
