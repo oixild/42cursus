@@ -6,7 +6,7 @@
 #    By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/05 16:08:52 by dsabater          #+#    #+#              #
-#    Updated: 2023/11/06 11:19:04 by dsabater         ###   ########.fr        #
+#    Updated: 2023/11/06 12:14:04 by dsabater         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,9 +31,9 @@ SRC =	ft_strlen.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_isalpha.
 		ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c \
 		ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-		ft_printf/ft_printf_itoa.c ft_printf/ft_printf.c ft_printf/ft_printf_putchar.c \
-		ft_printf/ft_printf_puthex.c ft_printf/ft_printf_putnbr.c ft_printf/ft_printf_putstr.c \
-		ft_printf/ft_printf_strcpy.c ft_printf/ft_printf_utoa.c
+		ft_printf/ft_itoa.c ft_printf/ft_printf.c ft_printf/ft_putchar.c \
+		ft_printf/ft_puthex.c ft_printf/ft_putnbr.c ft_printf/ft_putstr.c \
+		ft_printf/ft_strcpy.c ft_printf/ft_utoa.c
 
 BSRC =	ft_lstadd_back_bonus.c ft_lstlast_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
 		ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c

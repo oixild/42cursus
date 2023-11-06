@@ -3,24 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsabater <dsabater@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:54:45 by dsabater          #+#    #+#             */
-/*   Updated: 2023/06/06 10:40:24 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/11/06 11:33:40 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	void	ft_free(char **res)
-{
-	int	i;
-
-	i = -1;
-	while (res[++i])
-		free(res[i]);
-	free(res);
-}
 
 static	size_t	count_words(char const *s, char c)
 {

@@ -6,12 +6,14 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:43:21 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/06 11:00:00 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:09:20 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include <mlx.h>
+# include "../minlib/mlx.h"
 # include "../libft/libft.h"
+
+#endif

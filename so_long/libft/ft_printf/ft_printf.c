@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:10:34 by dsabater          #+#    #+#             */
-/*   Updated: 2023/08/16 12:26:10 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/11/06 11:49:09 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,21 @@ int	ft_types(char specifier, va_list ar)
 
 	count = 0;
 	if (specifier == 'c')
-		count = ft_putchar((char)va_arg(ar, int));
+		count = ft_printf_putchar((char)va_arg(ar, int));
 	else if (specifier == 's')
-		count = ft_putstr(va_arg(ar, char *));
+		count = ft_printf_putstr(va_arg(ar, char *));
 	else if (specifier == '%')
-		count = ft_putchar('%');
+		count = ft_printf_putchar('%');
 	else if (specifier == 'd' || specifier == 'i')
-		count = ft_putnbr(va_arg(ar, unsigned long));
+		count = ft_printf_putnbr(va_arg(ar, unsigned long));
 	else if (specifier == 'u')
-		count = ft_putnbr_u(va_arg(ar, unsigned int));
+		count = ft_printf_putnbr_u(va_arg(ar, unsigned int));
 	else if (specifier == 'x')
-		count = ft_puthex(va_arg(ar, unsigned int), 16);
+		count = ft_printf_puthex(va_arg(ar, unsigned int), 16);
 	else if (specifier == 'X')
-		count = ft_puthex_u(va_arg(ar, unsigned int), 16);
+		count = ft_printf_puthex_u(va_arg(ar, unsigned int), 16);
 	else if (specifier == 'p')
-		count = ft_put_p(va_arg(ar, unsigned long long), 16);
+		count = ft_printf_put_p(va_arg(ar, unsigned long long), 16);
 	return (count);
 }
 
