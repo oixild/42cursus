@@ -6,7 +6,7 @@
 #    By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 08:58:06 by dsabater          #+#    #+#              #
-#    Updated: 2023/10/25 08:58:55 by dsabater         ###   ########.fr        #
+#    Updated: 2023/11/06 10:50:55 by dsabater         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ INCLUDE = -I./libft
 all: $(NAME)
 
 $(NAME): $(OBJS) Makefile
+	make -C libft
 	$(CC) $(CFLAGS) -g -o $(NAME) $(OBJS) libft/libft.a
 	@echo "$(GREEN)$(NAME) compiled$(DEFAULT)"
 
@@ -42,10 +43,12 @@ $(NAME): $(OBJS) Makefile
 	$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<
 
 clean:
+	make -C libft clean
 	$(RM) $(OBJS)
 	@echo "$(YELLOW)Cleaned up .o files$(DEFAULT)"
 
 fclean: clean
+	make -C libft fclean
 	$(RM) $(NAME)
 	@echo "$(RED)Removed executable: $(NAME)$(DEFAULT)"
 
