@@ -6,7 +6,7 @@
 #    By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 08:58:06 by dsabater          #+#    #+#              #
-#    Updated: 2023/11/06 12:12:16 by dsabater         ###   ########.fr        #
+#    Updated: 2023/11/06 12:53:33 by dsabater         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,35 +29,35 @@ SRCS = src/main.c
 
 OBJS = $(SRCS:.c=.o)
 
-MLXFLAGS = -Lminlib -lmlx -framework OpenGL -framework AppKit
+MLXFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 INCLUDE = -I./libft
-MINILIB = minlib/mlx.a
+MINILIB = mlx/libmlx.a
 
 all: subsystem $(NAME)
 
 $(NAME): $(OBJS) Makefile
-	$(CC) $(CFLAGS) -g $(OBJS) libft/libft.a $(MLXFLAGS) $(MINILIB) -o $(NAME)
+	$(CC) $(CFLAGS) -g $(MLXFLAGS) $(OBJS) libft/libft.a mlx/libmlx.a -o $(NAME)
 	@echo "$(GREEN)$(NAME) compiled$(DEFAULT)"
 
 %.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) $(INCLUDE) -c -o -Imlx $@ $<
+	$(CC) $(CFLAGS) $(INCLUDE) -Ilmx -c -o $@ $<
 
 subsystem :
-		make -C libft
-		make -C minlib
+		make -C libft all
+		make -C mlx/ all
 
 clean:
 	make -C libft clean
-	make -C minlib clean
+	make -C mlx/ clean
 	$(RM) $(OBJS)
 	@echo "$(YELLOW)Cleaned up .o files$(DEFAULT)"
 
 fclean: clean
 	make -C libft fclean
-	make -C minlib clean
+	make -C mlx/ clean
 	$(RM) $(NAME)
 	@echo "$(RED)Removed executable: $(NAME)$(DEFAULT)"
 
