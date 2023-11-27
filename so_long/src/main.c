@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 16:33:41 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/13 11:18:39 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/11/27 11:03:12 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,10 @@ void *read_map()
 
 int main(int argc, char **argv)
 {
+	int *fd;
 
+
+	if (argc != 2)
+		return (0);
+	read_map(fd);
 }
