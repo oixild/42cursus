@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:43:21 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/27 11:10:46 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/11/27 11:28:43 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,21 @@
 # include <stdbool.h>
 # include <unistd.h>
 
-typedef struct s_img
+typedef struct	s_img
 {
 	void	*wall;
 	void	*floor;
 	void	*player;
 	void	*coll;
 	void	*stair;
+	int		height;
+	int		width;
+} 				t_img;
 
-} t_img;
-
-typedef struct s_game
+typedef struct	s_game
 {
 	void	*mlx;
+	void	*win;
 	t_img	img;
 	int		height;
 	int		width;
@@ -41,7 +43,7 @@ typedef struct s_game
 	int		total_coll;
 	int		walk_count;
 	char	*map;
-} t_game;
+}				t_game;
 
 
 // MLX DEFINES
