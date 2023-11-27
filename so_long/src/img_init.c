@@ -6,11 +6,11 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 09:58:19 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/27 11:37:05 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:15:19 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../inc/so_long.h"
 
 void	img_init(t_game *g)
 {
@@ -38,7 +38,23 @@ void	set_img(t_game *g)
 	height = -1;
 	while (++height < g->height)
 	{
-
+		width = -1;
+		while (++width < g->width)
+		{
+			if (g->map[height * g->width + width] == 1)
+				mlx_put_image_to_window(g->mlx, g->win, \
+					g->img.wall, width * 42, height, * 42);
+			else if (g->map[height * g->width + width] == 'C')
+				mlx_put_image_to_window(g->mlx, g->win, \
+					g->img.coll, width * 42, height, * 42);
+			else if (g->map[height * g->width + width] == 'P')
+				set_player(g, width, height);
+			else if (g->map[height * g->width + width] == 'E')
+				mlx_put_image_to_window(g->mlx, g->win, \
+					g->img.stair, width * 42, height, * 42);
+			else
+				mlx_put_image_to_window(g->mlx, g->win, \
+					g->img.floor, width * 42, height, * 42);
+		}
 	}
-
 }
