@@ -6,11 +6,29 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 09:41:49 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/27 13:22:32 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/11/28 10:56:23 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
+
+int map_load(t_game *g, char *fpath)
+{
+	int	fd
+
+	fd = open(fpath, O_RDONLY);
+	if (fd < 0)
+		{
+			ft_printf("Error: File cannot be loaded\n")
+			return (0);
+		}
+		else
+		{
+			map_create(g, fd);
+			close (fd);
+			return(1);
+		}
+}
 
 void	map_create(t_game *g, int fd)
 {
