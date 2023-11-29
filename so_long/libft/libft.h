@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:38:04 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/06 11:33:11 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/11/29 13:34:57 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,6 @@ t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 char	*ft_free(char **str);
 char	*get_next_line(int fd);
+int	ft_strrncmp(const char *s1, const char *s2, size_t n)
 
 #endif

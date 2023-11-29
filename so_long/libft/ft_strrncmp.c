@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_strrncmp.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/21 16:33:41 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/29 13:26:07 by dsabater         ###   ########.fr       */
+/*   Created: 2023/11/29 13:34:20 by dsabater          #+#    #+#             */
+/*   Updated: 2023/11/29 13:34:34 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
-
-
-int main(int argc, char **argv)
+int	ft_strrncmp(const char *s1, const char *s2, size_t n)
 {
-	t_game game;
+	unsigned int	i;
+	unsigned int	j;
 
-	if (argc == 2 && !(is_ber_file(argv[1])))
-		endgame("Can't open file. The format is not supported!", &game);
+	if (!s1 || !s2)
+		return (0);
+	i = ft_strlen(s1) - 1;
+	j = ft_strlen(s2) - 1;
+	while (--n && i && j && s1[i] == s2[j])
+	{
+		i--;
+		j--;
+	}
+	return ((unsigned char)s1[i] - (unsigned char)s2[j]);
 }

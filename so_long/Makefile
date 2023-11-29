@@ -6,7 +6,7 @@
 #    By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 08:58:06 by dsabater          #+#    #+#              #
-#    Updated: 2023/11/06 12:53:33 by dsabater         ###   ########.fr        #
+#    Updated: 2023/11/29 10:54:12 by dsabater         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ MINILIB = mlx/libmlx.a
 
 all: subsystem $(NAME)
 
+
 $(NAME): $(OBJS) Makefile
 	$(CC) $(CFLAGS) -g $(MLXFLAGS) $(OBJS) libft/libft.a mlx/libmlx.a -o $(NAME)
 	@echo "$(GREEN)$(NAME) compiled$(DEFAULT)"
@@ -65,3 +66,5 @@ re: fclean all
 
 
 .PHONY: clean all fclean re
+
+	printf "\n\n                 ░░░░░░░░░   ░░░░░░░░░░░░░░░░\n               ░░░░░░░░░     ░░░░░░  ░░░░░░░░\n             ░░░░░░░░░       ░░░░     ░░░░░░░\n           ░░░░░░░░░         ░░      ░░░░░░░\n         ░░░░░░░░░                  ░░░░░░░░\n       ░░░░░░░░░                  ░░░░░░░░\n     ░░░░░░░░░                  ░░░░░░░░\n   ░░░░░░░░░░░░░░░░░░░░░░     ░░░░░░░░     ░░\n   ░░░░░░ $$(whoami) ░░░░░░░   ░░░░░░░░    ░░░░\n   ░░░░░░░ pacman ░░░░░░░░   ░░░░░░░░  ░░░░░░\n   ░░░░░░░░░░░░░░░░░░░░░░░   ░░ Barcelona ░░░\n                  ░░░░░░░░   ░░░░░░░░░░░░░░░░\n                  ░░░░░░░░      |\n                  ░░░░░░░░      ╰┈➤$(NAME) \n                  ░░░░░░░░\n";

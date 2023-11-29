@@ -6,13 +6,13 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 09:58:19 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/27 13:15:19 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/11/29 12:35:50 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-void	img_init(t_game *g)
+void	init_sprites(t_game *g)
 {
 	g->mlx = mlx_init();
 	g->win = mlx_new_window(g->mlx, g->width * 42, g->height * 42, "so_long");
@@ -48,7 +48,8 @@ void	set_img(t_game *g)
 				mlx_put_image_to_window(g->mlx, g->win, \
 					g->img.coll, width * 42, height, * 42);
 			else if (g->map[height * g->width + width] == 'P')
-				set_player(g, width, height);
+				mlx_put_image_to_window(g->mlx, g->win, \
+					g->img.coll, width * 42, height, * 42);
 			else if (g->map[height * g->width + width] == 'E')
 				mlx_put_image_to_window(g->mlx, g->win, \
 					g->img.stair, width * 42, height, * 42);
