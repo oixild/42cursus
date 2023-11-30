@@ -6,21 +6,21 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:44:35 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/29 13:21:54 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:13:20 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	init_game(t_game *g, char fpath)
+#include "../inc/so_long.h"
+
+void	init_game(t_game *g, char *fpath)
 {
-	// map creation
-	// init window
-	init_sprites(g)
+	map_load(g, fpath);
+	init_sprites(g);
 	// render map
 	// hooks
-	//mlx_loop()
+	mlx_loop(g->mlx);
 }
-
-void	endgame(char *msg, t_game *g)
+void	endgame(t_game *g)
 {
 
 }

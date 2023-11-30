@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:43:21 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/27 11:28:43 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:29:26 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,13 @@ typedef struct	s_game
 # define D 2
 # define ESC 65307
 
-//
+// FUNCTIONS
 
+void	check_args(int argc, char **argv);
+void	init_game(t_game *g, char *fpath);
+void	init_sprites(t_game *g);
+void	set_img(t_game *g);
+int	keyhooks(t_game *g, int kh);
+int map_load(t_game *g, char *fpath);
 
 #endif

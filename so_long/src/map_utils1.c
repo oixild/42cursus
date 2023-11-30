@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 09:41:49 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/29 12:47:26 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:02:43 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int map_load(t_game *g, char *fpath)
 	fd = open(fpath, O_RDONLY);
 	if (fd < 0)
 		{
-			ft_printf("Error: File cannot be loaded\n")
+			print_error("Error: File cannot be loaded\n")
 			return (0);
 		}
 		else
@@ -30,7 +30,7 @@ int map_load(t_game *g, char *fpath)
 		}
 }
 
-void	map_create(t_game *g, int fd)
+void	map_create(t_game *g, int fpath)
 {
 	char	*line;
 	char	*tmp;
@@ -39,7 +39,7 @@ void	map_create(t_game *g, int fd)
 	if (g->map == 0)
 		return ;
 	g->map[0] = '\0';
-	line = get_next_line(fd);
+	line = get_next_line(fpath);
 	while (line)
 	{
 		g->height++;
