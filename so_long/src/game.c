@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:44:35 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/30 12:13:20 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:27:56 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ void	init_game(t_game *g, char *fpath)
 	// render map
 	// hooks
 	mlx_loop(g->mlx);
+}
+void	coords_init(t_game *g)
+{
+	coords.x =;
+	coords.y =;
 }
 void	endgame(t_game *g)
 {

@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:43:21 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/30 11:29:26 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:20:46 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@
 # include <stdbool.h>
 # include <unistd.h>
 
+typedef struct	s_coords
+{
+	int	x;
+	int	y;
+}				t_coords;
+
 typedef struct	s_img
 {
 	void	*wall;
@@ -34,22 +40,23 @@ typedef struct	s_img
 
 typedef struct	s_game
 {
-	void	*mlx;
-	void	*win;
-	t_img	img;
-	int		height;
-	int		width;
-	int		coll_count;
-	int		total_coll;
-	int		walk_count;
-	char	*map;
+	void		*mlx;
+	void		*win;
+	t_img		img;
+	t_coords	coords;
+	int			height;
+	int			width;
+	int			coll_count;
+	int			total_coll;
+	int			walk_count;
+	char		*map;
 }				t_game;
 
 
 // MLX DEFINES
 
 # define PLAYER "../textures/sprites/main_character.xpm"
-# define COLL "../textures/death_mouse_to_take.xpm"
+# define COLL "../textures/sprites/death_mouse_to_take.xpm"
 # define STAIR "../textures/sprites/stair.xpm"
 # define WALL "../textures/backgroumds/wall.xpm"
 # define FLOOR "../textures/backgroumds/floor.xpm"

@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 09:51:29 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/30 12:01:00 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:24:20 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 int	keyhooks(t_game *g, int kh)
 {
-	int	x;
-	int	y;
+	// Estructura creada con X/Y, se necesita asignar la localizacion del jugador
+	// y luego hacer que dependiendo del movimiento sea (X)+3/-3 (Y)+4/-4
 
-	game->character.mem = 0;
 	if (kh == ESC)
-		endgame("", game, event_ending); // Falta por hacer
+		endgame(); // Falta por hacer
 	else if (keycode == W)
 		move_up(g); // Falta por hacer
 	else if (keycode == A)
