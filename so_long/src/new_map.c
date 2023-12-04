@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_utils1.c                                       :+:      :+:    :+:   */
+/*   new_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 09:41:49 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/30 11:02:43 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/04 09:35:46 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int map_load(t_game *g, char *fpath)
 {
-	int	fd
+	int	fd;
 
 	fd = open(fpath, O_RDONLY);
 	if (fd < 0)
 		{
-			print_error("Error: File cannot be loaded\n")
+			print_error("Error: File cannot be loaded");
 			return (0);
 		}
 		else
@@ -51,7 +51,7 @@ void	map_create(t_game *g, int fpath)
 		tmp = NULL;
 		free(line);
 		line = NULL;
-		line = get_next_line(fd);
+		line = get_next_line(fpath);
 	}
 	free(line);
 }

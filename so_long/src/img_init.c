@@ -6,12 +6,27 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 09:58:19 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/30 11:48:34 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/04 09:10:45 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
+int	coll_count(char *str)
+{
+	int	i;
+	int	coll;
+
+	i = 0;
+	coll = 0;
+	while(str[i])
+	{
+		if (str[i] == 'C')
+			coll++;
+		i++;
+	}
+	return (coll);
+}
 void	init_sprites(t_game *g)
 {
 	g->mlx = mlx_init();
@@ -43,19 +58,19 @@ void	set_img(t_game *g)
 		{
 			if (g->map[height * g->width + width] == 1)
 				mlx_put_image_to_window(g->mlx, g->win, \
-					g->img.wall, width * 42, height, * 42);
+					g->img.wall, width * 42, height * 42);
 			else if (g->map[height * g->width + width] == 'C')
 				mlx_put_image_to_window(g->mlx, g->win, \
-					g->img.coll, width * 42, height, * 42);
+					g->img.coll, width * 42, height * 42);
 			else if (g->map[height * g->width + width] == 'P')
 				mlx_put_image_to_window(g->mlx, g->win, \
-					g->img.coll, width * 42, height, * 42);
+					g->img.coll, width * 42, height * 42);
 			else if (g->map[height * g->width + width] == 'E')
 				mlx_put_image_to_window(g->mlx, g->win, \
-					g->img.stair, width * 42, height, * 42);
+					g->img.stair, width * 42, height * 42);
 			else
 				mlx_put_image_to_window(g->mlx, g->win, \
-					g->img.floor, width * 42, height, * 42);
+					g->img.floor, width * 42, height * 42);
 		}
 	}
 }

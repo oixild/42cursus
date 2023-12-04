@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 12:50:49 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/06 11:51:55 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/04 10:02:07 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_printf_puthex_u(unsigned int n, int base)
 	}
 }
 
-int	ft_put_p(unsigned long long n, int base)
+int	ft_printf_put_p(unsigned long long n, int base)
 {
 	int	ret;
 

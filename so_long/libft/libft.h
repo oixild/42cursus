@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:38:04 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/30 11:07:56 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/04 10:00:11 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "ft_printf/ft_printf.h"
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1000
+# endif
 
 typedef struct s_list
 {
@@ -30,7 +34,7 @@ int		ft_isalnum(int a);
 int		ft_isascii(int a);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
-size_t	ft_strlen(const char *str);
+int		ft_strlen(const char *str);
 int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
@@ -69,6 +73,6 @@ t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 char	*ft_free(char **str);
 char	*get_next_line(int fd);
-int	ft_strrncmp(const char *s1, const char *s2, size_t n);
+int		ft_strrncmp(const char *s1, const char *s2, int n);
 
 #endif

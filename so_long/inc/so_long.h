@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:43:21 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/30 12:20:46 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/04 09:36:43 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@
 # include <stdbool.h>
 # include <unistd.h>
 
-typedef struct	s_coords
-{
-	int	x;
-	int	y;
-}				t_coords;
 
 typedef struct	s_img
 {
@@ -43,7 +38,6 @@ typedef struct	s_game
 	void		*mlx;
 	void		*win;
 	t_img		img;
-	t_coords	coords;
 	int			height;
 	int			width;
 	int			coll_count;
@@ -74,7 +68,16 @@ void	check_args(int argc, char **argv);
 void	init_game(t_game *g, char *fpath);
 void	init_sprites(t_game *g);
 void	set_img(t_game *g);
-int	keyhooks(t_game *g, int kh);
-int map_load(t_game *g, char *fpath);
+int		keyhooks(t_game *g, int kh);
+int 	map_load(t_game *g, char *fpath);
+void	map_create(t_game *g, int fpath);
+int		endgame(t_game *g);
+void	print_error(char *msg);
+void	move_w(t_game *g);
+void	move_a(t_game *g);
+void	move_s(t_game *g);
+void	move_d(t_game *g);
+void	check_map(t_game *g);
+
 
 #endif

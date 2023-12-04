@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:44:35 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/30 12:27:56 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/04 08:50:25 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 void	init_game(t_game *g, char *fpath)
 {
-	map_load(g, fpath);
 	init_sprites(g);
-	// render map
-	// hooks
-	mlx_loop(g->mlx);
+	map_load(g, fpath);
+	check_map(g);
+	set_img(g);
 }
-void	coords_init(t_game *g)
+int	endgame(t_game *g)
 {
-	coords.x =;
-	coords.y =;
+	mlx_destroy_window(g->mlx, g->win);
+	exit(0);
 }
-void	endgame(t_game *g)
+/* int	clear_game(t_game *g)
 {
-
+	g->walk_cnt++;
+	ft_printf("%d "steps."\n", g->walk_count);
+	exit(0);
 }
+ */

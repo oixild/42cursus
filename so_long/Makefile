@@ -6,7 +6,7 @@
 #    By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 08:58:06 by dsabater          #+#    #+#              #
-#    Updated: 2023/11/30 11:10:13 by dsabater         ###   ########.fr        #
+#    Updated: 2023/12/04 09:32:09 by dsabater         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ HEADER = inc/so_long.h
 NAME = so_long
 
 SRCS = src/so_long.c src/errors.c src/game.c  src/img_init.c \
-		src/keyhooks.c src/map_utils1.c src/movements.c \
+		src/keyhooks.c src/new_map.c src/movements.c \
+		src/map_checker.c
 
 
 OBJS = $(SRCS:.c=.o)

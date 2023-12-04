@@ -6,11 +6,13 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 13:34:20 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/29 13:34:34 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/04 09:55:48 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strrncmp(const char *s1, const char *s2, size_t n)
+#include "libft.h"
+
+int	ft_strrncmp(const char *s1, const char *s2, int n)
 {
 	unsigned int	i;
 	unsigned int	j;

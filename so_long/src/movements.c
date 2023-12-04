@@ -6,33 +6,102 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 10:53:04 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/30 12:32:28 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/04 09:49:37 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
 
-move_up(t_game *g)
+void	move_w(t_game *g)
 {
-	// Adaptar al codigo con esta logica
-/* 	int i;
+	int	i;
+
 	i = 0;
-	while (i++ < ft_strlen(g->str_line))
+	while (i++ < ft_strlen(g->map))
 	{
-		if (g->str_line[i] == 'P')
-		break ;
+		if (g->map[i] == 'P')
+			break ;
 	}
-	if (g->str_line[i - g->wid] == 'C')
-		g->col_cnt++;
-	if (g->str_line[i - g->wid] == 'E' && g->all_col == g->col_cnt)
+	if (g->map[i - 1] == 'C')
+		g->coll_count++;
+	if (g->map[i - 1] == 'E' && g->total_coll == g->coll_count)
 		endgame(g);
-	else if (g->str_line[i - g->wid] != '1' && g->str_line[i - g->wid] != 'E')
+	else if (g->map[i - 1] != '1' && g->map[i - 1] != 'E')
 	{
-		g->str_line[i] = '0';
-		g->str_line[i - g->wid] = 'P';
-		g->walk_cnt++;
-		printf("%d\n", g->walk_cnt);
-		setting_img(g);
-	} */
+		g->map[i] = '0';
+		g->map[i - 1] = 'P';
+		g->walk_count++;
+		ft_printf("%d\n", g->walk_count);
+		set_img(g);
+	}
+}
+void	move_a(t_game *g)
+{
+	int	i;
+
+	i = 0;
+	while (i++ < ft_strlen(g->map))
+	{
+		if (g->map[i] == 'P')
+			break ;
+	}
+	if (g->map[i - 1] == 'C')
+		g->coll_count++;
+	if (g->map[i - 1] == 'E' && g->total_coll == g->coll_count)
+		endgame(g);
+	else if (g->map[i - 1] != '1' && g->map[i - 1] != 'E')
+	{
+		g->map[i] = '0';
+		g->map[i - 1] = 'P';
+		g->walk_count++;
+		ft_printf("%d\n", g->walk_count);
+		set_img(g);
+	}
+}
+void	move_s(t_game *g)
+{
+	int	i;
+
+	i = 0;
+	while (i++ < ft_strlen(g->map))
+	{
+		if (g->map[i] == 'P')
+			break ;
+	}
+	if (g->map[i + g->width] == 'C')
+		g->coll_count++;
+	if (g->map[i + g->width] == 'E' && g->total_coll == g->coll_count)
+		endgame(g);
+	else if (g->map[i + g->width] != '1' && g->map[i + g->width] != 'E')
+	{
+		g->map[i] = '0';
+		g->map[i + g->width] = 'P';
+		g->walk_count++;
+		ft_printf("%d\n", g->walk_count);
+		set_img(g);
+	}
+}
+void	move_d(t_game *g)
+{
+	int	i;
+
+	i = 0;
+	while (i++ < ft_strlen(g->map))
+	{
+		if (g->map[i] == 'P')
+			break ;
+	}
+	if (g->map[i + 1] == 'C')
+		g->coll_count++;
+	if (g->map[i + 1] == 'E' && g->total_coll == g->coll_count)
+		endgame(g);
+	else if (g->map[i + 1] != '1' && g->map[i + 1] != 'E')
+	{
+		g->map[i] = '0';
+		g->map[i + 1] = 'P';
+		g->walk_count++;
+		ft_printf("%d\n", g->walk_count);
+		set_img(g);
+	}
 }
