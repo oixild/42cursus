@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:43:21 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/05 14:00:45 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/05 14:09:21 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ typedef struct	s_game
 # define A 0
 # define S 1
 # define D 2
-# define ESC 65307
+# define ESC 53
 
 // FUNCTIONS
 
