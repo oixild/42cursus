@@ -6,7 +6,7 @@
 #    By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 08:58:06 by dsabater          #+#    #+#              #
-#    Updated: 2023/12/04 09:32:09 by dsabater         ###   ########.fr        #
+#    Updated: 2023/12/05 12:52:51 by dsabater         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,11 +27,10 @@ NAME = so_long
 
 SRCS = src/so_long.c src/errors.c src/game.c  src/img_init.c \
 		src/keyhooks.c src/new_map.c src/movements.c \
-		src/map_checker.c
+		src/map_checker.c src/utils.c
 
 
 OBJS = $(SRCS:.c=.o)
-
 MLXFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 CC = gcc
 RM = rm -f
@@ -43,11 +42,11 @@ all: subsystem $(NAME)
 
 
 $(NAME): $(OBJS) Makefile
-	$(CC) $(CFLAGS) -g $(MLXFLAGS) $(OBJS) libft/libft.a mlx/libmlx.a -o $(NAME)
+	$(CC) $(CFLAGS) $(MLXFLAGS) $(OBJS) -fsanitize=address -g libft/libft.a mlx/libmlx.a -o $(NAME)
 	@echo "$(GREEN)$(NAME) compiled$(DEFAULT)"
 
 %.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) $(INCLUDE) -Ilmx -c -o $@ $<
+	$(CC) $(CFLAGS) $(INCLUDE) -fsanitize=address -Ilmx -c -g -o $@ $<
 
 subsystem :
 		make -C libft all

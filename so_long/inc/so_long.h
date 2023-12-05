@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:43:21 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/04 09:36:43 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/05 14:00:45 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,11 @@ typedef struct	s_game
 
 // MLX DEFINES
 
-# define PLAYER "../textures/sprites/main_character.xpm"
-# define COLL "../textures/sprites/death_mouse_to_take.xpm"
-# define STAIR "../textures/sprites/stair.xpm"
-# define WALL "../textures/backgroumds/wall.xpm"
-# define FLOOR "../textures/backgroumds/floor.xpm"
-//# define ON_STAIR
+# define PLAYER "textures/sprites/main_character.xpm"
+# define COLL "textures/sprites/death_mouse_to_take.xpm"
+# define STAIR "textures/sprites/stair.xpm"
+# define WALL "textures/backgrounds/wall.xpm"
+# define FLOOR "textures/backgrounds/floor.xpm"
 
 # define W 13
 # define A 0
@@ -68,8 +67,8 @@ void	check_args(int argc, char **argv);
 void	init_game(t_game *g, char *fpath);
 void	init_sprites(t_game *g);
 void	set_img(t_game *g);
-int		keyhooks(t_game *g, int kh);
-int 	map_load(t_game *g, char *fpath);
+int		keyhooks(int kh, t_game *g);
+void 	map_load(t_game *g, char *fpath);
 void	map_create(t_game *g, int fpath);
 int		endgame(t_game *g);
 void	print_error(char *msg);
@@ -78,6 +77,8 @@ void	move_a(t_game *g);
 void	move_s(t_game *g);
 void	move_d(t_game *g);
 void	check_map(t_game *g);
+char	*ft_strjoin_no_nl(char *s1, char *s2);
+char	*ft_strdup_no_nl(char *s1);
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 13:26:31 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/04 09:36:14 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/05 12:08:36 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ void	check_args(int argc, char **argv)
 	if (argc != 2)
 		print_error("Invalid number of arguments!");
 	fd = open(argv[1], O_RDONLY);
-	if (fd < 0)
-		print_error("File not found!");
 	if (ft_strrncmp(argv[1], ".ber", 4))
 		print_error("Invalid file type, use .ber!");
 }

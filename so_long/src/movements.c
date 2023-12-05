@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 10:53:04 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/04 09:49:37 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/05 13:52:47 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ void	move_w(t_game *g)
 		if (g->map[i] == 'P')
 			break ;
 	}
-	if (g->map[i - 1] == 'C')
+	if (g->map[i - g->width] == 'C')
 		g->coll_count++;
-	if (g->map[i - 1] == 'E' && g->total_coll == g->coll_count)
+	if (g->map[i - g->width] == 'E' && g->total_coll == g->coll_count)
 		endgame(g);
-	else if (g->map[i - 1] != '1' && g->map[i - 1] != 'E')
+	else if (g->map[i - g->width] != '1' && g->map[i - 1] != 'E')
 	{
 		g->map[i] = '0';
-		g->map[i - 1] = 'P';
+		g->map[i - g->width] = 'P';
 		g->walk_count++;
 		ft_printf("%d\n", g->walk_count);
 		set_img(g);
