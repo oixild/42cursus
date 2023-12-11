@@ -6,7 +6,7 @@
 #    By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 08:58:06 by dsabater          #+#    #+#              #
-#    Updated: 2023/12/05 12:52:51 by dsabater         ###   ########.fr        #
+#    Updated: 2023/12/11 10:32:34 by dsabater         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ NAME = so_long
 
 SRCS = src/so_long.c src/errors.c src/game.c  src/img_init.c \
 		src/keyhooks.c src/new_map.c src/movements.c \
-		src/map_checker.c src/utils.c
+		src/map_checker.c src/utils.c src/flood_fill.c
 
 
 OBJS = $(SRCS:.c=.o)

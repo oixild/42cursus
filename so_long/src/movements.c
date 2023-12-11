@@ -6,12 +6,11 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 10:53:04 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/05 13:52:47 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/11 12:21:17 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
-
 
 void	move_w(t_game *g)
 {
@@ -36,6 +35,7 @@ void	move_w(t_game *g)
 		set_img(g);
 	}
 }
+
 void	move_a(t_game *g)
 {
 	int	i;
@@ -59,6 +59,7 @@ void	move_a(t_game *g)
 		set_img(g);
 	}
 }
+
 void	move_s(t_game *g)
 {
 	int	i;
@@ -82,6 +83,7 @@ void	move_s(t_game *g)
 		set_img(g);
 	}
 }
+
 void	move_d(t_game *g)
 {
 	int	i;

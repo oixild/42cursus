@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 07:05:44 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/06 13:45:07 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/11 12:22:31 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	map_legal_chars(t_game *g)
 	int	i;
 
 	i = 0;
-	while(g->map[i])
+	while (g->map[i])
 	{
-		if(g->map[i] == '1' || g->map[i] == '0' || g->map[i] == 'P' || \
+		if (g->map[i] == '1' || g->map[i] == '0' || g->map[i] == 'P' || \
 			g->map[i] == 'C' || g->map[i] == 'E')
 			i++;
-		else if(g->map[i] == '\n')
+		else if (g->map[i] == '\n')
 			i++;
 		else
 		{
@@ -93,4 +93,5 @@ void	check_map(t_game *g)
 	map_check_wall(g);
 	map_check_params(g);
 	map_legal_chars(g);
+	map_possible_arrival(g);
 }

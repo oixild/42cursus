@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 11:48:34 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/05 12:06:12 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/11 12:18:35 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char	*ft_strdup_no_nl(char *s1)
 	str[i] = '\0';
 	return (str);
 }
+
 int	ft_strlcpy_no_nl(char *dst, char *src, int dstsize)
 {
 	int	i;
@@ -50,6 +51,7 @@ int	ft_strlcpy_no_nl(char *dst, char *src, int dstsize)
 	*dst = '\0';
 	return (i);
 }
+
 char	*ft_strjoin_no_nl(char *s1, char *s2)
 {
 	char	*str;
