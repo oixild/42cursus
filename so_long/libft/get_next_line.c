@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 11:55:16 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/06 11:10:24 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/11 13:17:50 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ char	*limpiarsaved(char *saved)
 	else
 		len = (ptr - saved) + 1;
 	if (!saved[len])
-		{
-			ft_free(&saved);
-			return (NULL);
-		}
+	{
+		ft_free(&saved);
+		return (NULL);
+	}
 	new_saved = ft_substr(saved, len, ft_strlen(saved) - len);
 	free(saved);
 	if (!new_saved)

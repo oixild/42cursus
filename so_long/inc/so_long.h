@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:43:21 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/11 12:06:39 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/11 13:15:41 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@
 # include <stdbool.h>
 # include <unistd.h>
 
-
-typedef struct	s_img
+typedef struct s_img
 {
 	void	*wall;
 	void	*floor;
@@ -31,9 +30,9 @@ typedef struct	s_img
 	void	*stair;
 	int		height;
 	int		width;
-} 				t_img;
+}				t_img;
 
-typedef struct	s_game
+typedef struct s_game
 {
 	void		*mlx;
 	void		*win;
@@ -45,7 +44,6 @@ typedef struct	s_game
 	int			walk_count;
 	char		*map;
 }				t_game;
-
 
 // MLX DEFINES
 
@@ -68,7 +66,7 @@ void	init_game(t_game *g, char *fpath);
 void	init_sprites(t_game *g);
 void	set_img(t_game *g);
 int		keyhooks(int kh, t_game *g);
-void 	map_load(t_game *g, char *fpath);
+void	map_load(t_game *g, char *fpath);
 void	map_create(t_game *g, int fpath);
 int		endgame(t_game *g);
 void	print_error(char *msg);
@@ -81,6 +79,5 @@ char	*ft_strjoin_no_nl(char *s1, char *s2);
 char	*ft_strdup_no_nl(char *s1);
 void	map_possible_arrival(t_game *g);
 int		coll_count(char *str);
-
 
 #endif

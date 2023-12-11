@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 09:48:54 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/11 13:10:46 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/11 13:13:21 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	map_flood_fill(char *mapcpy, int width, int i, int *find)
 {
 	if (mapcpy[i] == '1' || mapcpy[i] == '*' || *find == 0 || mapcpy[i] == 'E')
-	return ;
+		return ;
 	if (mapcpy[i] == 'E')
 		*find = *find - 1;
 	mapcpy[i] = '*';
@@ -28,7 +28,7 @@ void	map_flood_fill(char *mapcpy, int width, int i, int *find)
 	}
 }
 
-int can_reach_target(t_game *g)
+int	can_reach_target(t_game *g)
 {
 	char	*mapcpy;
 	char	target;
@@ -42,20 +42,21 @@ int can_reach_target(t_game *g)
 	else
 		find = coll_count(g->map);
 	i = 0;
-    while (i < ft_strlen(g->map))
+	while (i < ft_strlen(g->map))
 	{
 		if (g->map[i] == 'P')
-			break;
+			break ;
 		i++;
 	}
 	map_flood_fill(mapcpy, g->width, i, &find);
 	free(mapcpy);
 	return (find <= 0);
 }
+
 void	map_flood_fill_c(char *mapcpy, int width, int i, int *find)
 {
 	if (mapcpy[i] == '1' || mapcpy[i] == '*' || *find == 0 || mapcpy[i] == 'E')
-	return ;
+		return ;
 	if (mapcpy[i] == 'C')
 		*find = *find - 1;
 	mapcpy[i] = '*';
@@ -68,7 +69,7 @@ void	map_flood_fill_c(char *mapcpy, int width, int i, int *find)
 	}
 }
 
-int can_reach_target_c(t_game *g)
+int	can_reach_target_c(t_game *g)
 {
 	char	*mapcpy;
 	char	target;
@@ -82,10 +83,10 @@ int can_reach_target_c(t_game *g)
 	else
 		find = coll_count(g->map);
 	i = 0;
-    while (i < ft_strlen(g->map))
+	while (i < ft_strlen(g->map))
 	{
 		if (g->map[i] == 'P')
-			break;
+			break ;
 		i++;
 	}
 	map_flood_fill_c(mapcpy, g->width, i, &find);
@@ -93,8 +94,8 @@ int can_reach_target_c(t_game *g)
 	return (find <= 0);
 }
 
-void map_possible_arrival(t_game *g)
+void	map_possible_arrival(t_game *g)
 {
-    if (!can_reach_target(g) && !can_reach_target_c(g))
-        print_error("Cannot reach the exit or any key!");
+	if (!can_reach_target(g) && !can_reach_target_c(g))
+		print_error("Cannot reach the exit or any key!");
 }

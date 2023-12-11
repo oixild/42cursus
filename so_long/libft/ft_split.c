@@ -6,12 +6,11 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:54:45 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/06 11:33:40 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/11 13:16:20 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 static	size_t	count_words(char const *s, char c)
 {

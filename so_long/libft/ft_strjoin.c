@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:58:10 by dsabater          #+#    #+#             */
-/*   Updated: 2023/11/06 11:08:17 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/11 13:16:36 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	{
 		s1 = malloc(1 * sizeof (char));
 		if (!s1)
-			return NULL;
+			return (NULL);
 		s1[0] = '\0';
 	}
 	str = (char *)malloc(sizeof(*s1) * (ft_strlen(s1) + ft_strlen(s2) + 1));
