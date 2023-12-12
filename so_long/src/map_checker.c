@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 07:05:44 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/12 11:16:21 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/12 11:34:34 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ void	map_legal_chars(t_game *g)
 			i++;
 		else
 		{
-			ft_printf("Error\nIllegal characters is: %c\n", g->map[i]);
-			print_error("Error\nThe map contains some illegal characters");
+			ft_printf("Error\nThe map contains some illegal characters, " \
+				"the wrong character is: %c", g->map[i]);
+			print_error("");
 		}
 	}
 }
@@ -79,7 +80,7 @@ void	map_check_params(t_game *g)
 			g->total_coll++;
 	}
 	if (num_e != 1)
-		print_error("Error\nMap must have at least one exit");
+		print_error("Error\nMap must have one exit");
 	if (g->total_coll == 0)
 		print_error("Error\nMap must have at least one collectible");
 	if (num_p != 1)

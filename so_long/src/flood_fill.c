@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 09:48:54 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/12 11:15:43 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/12 11:19:53 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,5 @@ void	map_possible_arrival(t_game *g)
 	e = can_reach_target(g);
 	c = can_reach_target_c(g);
 	if ((!e && c) || (!c && e))
-		print_error("Error\nCannot reach the exit or any key!");
+		print_error("Error\nCannot reach the exit or any rat!");
 }
