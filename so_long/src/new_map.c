@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 09:41:49 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/11 09:43:50 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/12 11:01:15 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	map_load(t_game *g, char *fpath)
 	if (fd <= 0)
 		print_error("File open fail.");
 	line = get_next_line(fd);
+	if (line == NULL)
+		print_error("The file cannot be empty.");
 	g->height = 0;
 	g->walk_count = 0;
 	g->width = ft_strlen(line) - 1;
