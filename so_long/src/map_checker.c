@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 07:05:44 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/11 17:27:24 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/12 11:16:21 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	map_legal_chars(t_game *g)
 			i++;
 		else
 		{
-			ft_printf("Illegal characters is: %c\n", g->map[i]);
-			print_error("The map contains some illegal characters");
+			ft_printf("Error\nIllegal characters is: %c\n", g->map[i]);
+			print_error("Error\nThe map contains some illegal characters");
 		}
 	}
 }
@@ -42,17 +42,17 @@ void	map_check_wall(t_game *g)
 		if (i < g->width)
 		{
 			if (g->map[i] != '1')
-				print_error("Map must be closed/surrounded by walls");
+				print_error("Error\nMap must be closed/surrounded by walls");
 		}
 		else if (i % g->width == 0 || i % g->width == g->width - 1)
 		{
 			if (g->map[i] != '1')
-				print_error("Map must be closed/surrounded by walls");
+				print_error("Error\nMap must be closed/surrounded by walls");
 		}
 		else if (i > ft_strlen(g->map) - g->width)
 		{
 			if (g->map[i] != '1')
-				print_error("Map must be closed/surrounded by walls");
+				print_error("Error\nMap must be closed/surrounded by walls");
 		}
 		i++;
 	}
@@ -79,17 +79,17 @@ void	map_check_params(t_game *g)
 			g->total_coll++;
 	}
 	if (num_e != 1)
-		print_error("Map must have at least one exit");
+		print_error("Error\nMap must have at least one exit");
 	if (g->total_coll == 0)
-		print_error("Map must have at least one collectible");
+		print_error("Error\nMap must have at least one collectible");
 	if (num_p != 1)
-		print_error("Map must have one starting position");
+		print_error("Error\nMap must have one starting position");
 }
 
 void	check_map(t_game *g)
 {
 	if (g->height * g->width != ft_strlen(g->map))
-		print_error("Map must be rectangular");
+		print_error("Error\nMap must be rectangular");
 	map_check_wall(g);
 	map_check_params(g);
 	map_legal_chars(g);
