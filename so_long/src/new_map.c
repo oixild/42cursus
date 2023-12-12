@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 09:41:49 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/12 11:16:28 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/12 13:05:10 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ void	map_load(t_game *g, char *fpath)
 		g->height++;
 		line = get_next_line(fd);
 		if (line)
-		{
 			g->map = ft_strjoin_no_nl(g->map, line);
-		}
 	}
 	close(fd);
 }
