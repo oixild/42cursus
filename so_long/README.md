@@ -1,4 +1,4 @@
-> [NOTE]
+> [!NOTE]
 > To use it first compile the project with:
 > Make.
 > Then you can run the program as follows:
