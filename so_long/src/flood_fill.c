@@ -6,11 +6,28 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 09:48:54 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/12 11:19:53 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/13 19:25:30 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
+
+void	search_c_e(char *mapcpy, int width)
+{
+	int i;
+
+	i = 0;
+	while (i < ft_strlen(mapcpy))
+	{
+		if (mapcpy[i] == 'E')
+			break ;
+		i++;
+	}
+	if (mapcpy[i + 1] != '*' || mapcpy[i - 1] != '*' || \
+		mapcpy[i + width] != '*' || mapcpy[i - width] != '*')
+		ft_printf("H::::::%s\n", mapcpy);
+		//print_error("Error\nCannot reach the exit or any rat!");
+}
 
 void	map_flood_fill(char *mapcpy, int width, int i, int *find)
 {
@@ -21,10 +38,10 @@ void	map_flood_fill(char *mapcpy, int width, int i, int *find)
 	mapcpy[i] = '*';
 	if (*find > 0)
 	{
-		map_flood_fill(mapcpy, width, i - width, find);
 		map_flood_fill(mapcpy, width, i + 1, find);
-		map_flood_fill(mapcpy, width, i + width, find);
 		map_flood_fill(mapcpy, width, i - 1, find);
+		map_flood_fill(mapcpy, width, i + width, find);
+		map_flood_fill(mapcpy, width, i - width, find);
 	}
 }
 
@@ -47,6 +64,8 @@ int	can_reach_target(t_game *g)
 		i++;
 	}
 	map_flood_fill(mapcpy, g->width, i, &find);
+	search_c_e(mapcpy, g->width);
+	ft_printf("E::::::%s\n", mapcpy);
 	free(mapcpy);
 	return (find);
 }
@@ -88,6 +107,8 @@ int	can_reach_target_c(t_game *g)
 		i++;
 	}
 	map_flood_fill_c(mapcpy, g->width, i, &find);
+	search_c_e(mapcpy, g->width);
+	ft_printf("C::::::%s\n", mapcpy);
 	free(mapcpy);
 	return (find);
 }
