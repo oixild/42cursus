@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 11:48:34 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/14 11:26:34 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/14 11:40:05 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,10 @@ char	*ft_strjoin_no_nl(char *s1, char *s2)
 	free(s1);
 	free(s2);
 	return (str);
+}
+
+void	max_screen(int width, int height)
+{
+	if (width > 61 || height > 32)
+		print_error("The map has to be smaller");
 }

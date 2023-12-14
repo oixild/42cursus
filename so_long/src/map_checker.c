@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 07:05:44 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/13 19:06:35 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/14 11:32:02 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,5 @@ void	check_map(t_game *g)
 	map_check_params(g);
 	map_legal_chars(g);
 	map_possible_arrival(g);
+	max_screen(g->width, g->height);
 }
