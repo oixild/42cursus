@@ -6,7 +6,7 @@
 #    By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 08:58:06 by dsabater          #+#    #+#              #
-#    Updated: 2023/12/12 13:07:54 by dsabater         ###   ########.fr        #
+#    Updated: 2023/12/14 11:13:02 by dsabater         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ NAME = so_long
 SRCS = src/so_long.c src/errors.c src/game.c  src/img_init.c \
 		src/keyhooks.c src/new_map.c src/movements.c \
 		src/map_checker.c src/utils.c src/flood_fill.c \
-
+		src/valid_exit.c
 
 OBJS = $(SRCS:.c=.o)
 MLXFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit

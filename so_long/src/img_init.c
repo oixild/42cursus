@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 09:58:19 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/11 12:36:56 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/14 11:06:51 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	init_sprites(t_game *g)
 	g->win = mlx_new_window(g->mlx, g->width * 42, g->height * 42, "so_long");
 	g->img.wall = mlx_xpm_file_to_image(g->mlx, WALL, \
 		&(g->img.width), &(g->img.height));
-	ft_printf("%s\n", g->img.wall);
 	g->img.floor = mlx_xpm_file_to_image(g->mlx, FLOOR, \
 		&(g->img.width), &(g->img.height));
 	g->img.coll = mlx_xpm_file_to_image(g->mlx, COLL, \

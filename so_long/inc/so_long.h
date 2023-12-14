@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:43:21 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/12 13:06:12 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/14 11:12:47 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,6 @@ void	check_map(t_game *g);
 char	*ft_strjoin_no_nl(char *s1, char *s2);
 char	*ft_strdup_no_nl(char *s1);
 void	map_possible_arrival(t_game *g);
-int		coll_count(char *str);
+void	search_c_e(char *mapcpy, int width);
 
 #endif
