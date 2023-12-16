@@ -6,7 +6,7 @@
 /*   By: dsabater <dsabater@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 09:48:54 by dsabater          #+#    #+#             */
-/*   Updated: 2023/12/14 11:26:53 by dsabater         ###   ########.fr       */
+/*   Updated: 2023/12/16 16:14:02 by dsabater         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	map_flood_fill(char *mapcpy, int width, int i, int *find)
 	if (mapcpy[i] == '1' || mapcpy[i] == '*')
 		return ;
 	if (mapcpy[i] == 'E')
-		*find = *find - 1;
+		*find = 0;
 	if (mapcpy[i] != 'E' && mapcpy[i] != 'P')
 		mapcpy[i] = '*';
 	if (*find > 0)
