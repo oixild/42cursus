@@ -1,6 +1,0 @@
-----------------8<-------------[ START TEST 
-        💻 TEST
-./a.out "1024"         🔎 YOUR OUTPUT:
-        🗝 EXPECTED OUTPUT:
-is_power_of_2("1024") = 1$
-----------------8<------------- END TEST ]

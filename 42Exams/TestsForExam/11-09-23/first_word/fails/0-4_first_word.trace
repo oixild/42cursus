@@ -1,8 +1,0 @@
-----------------8<-------------[ START TEST 
-        💻 TEST
-./a.out "  lorem,ipsum  " 
-        🔎 YOUR OUTPUT:
-$
-        🗝 EXPECTED OUTPUT:
-lorem,ipsum$
-----------------8<------------- END TEST ]
